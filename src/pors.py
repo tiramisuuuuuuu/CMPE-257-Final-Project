@@ -35,7 +35,10 @@ def pors(rule_covs, y, max_rules=10, max_front=200):
                 u = s["cov"] | rc
                 p, r = pr(u, y)
                 new.append({"prec": p, "rec": r, "cov": u, "ids": s["ids"] | {i}})
-        updated = pareto(front + new)[:max_front]
+        updated = pareto(front + new)
+        if len(updated) > max_front:   # thin the front evenly (don't just cut off one end)
+            idx = np.linspace(0, len(updated) - 1, max_front).round().astype(int)
+            updated = [updated[i] for i in sorted(set(idx))]
         if {f["ids"] for f in updated} == {f["ids"] for f in front}:
             break
         front = updated
