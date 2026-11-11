@@ -84,7 +84,7 @@ def main():
     ap.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2])
     ap.add_argument("--bins", type=int, default=10)
     ap.add_argument("--max_rules", type=int, default=15)
-    ap.add_argument("--max_len", type=int, default=3)
+    ap.add_argument("--max_len", type=int, default=6)
     ap.add_argument("--min_support", type=int, default=10)
     ap.add_argument("--pors_k", type=int, default=10)
     ap.add_argument("--brute", action="store_true")
