@@ -5,3 +5,5 @@ __pycache__/
 .ipynb_checkpoints/
 official/
 venv-official/
+results/synthetic_*
+results/rules/

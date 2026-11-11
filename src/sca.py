@@ -55,5 +55,5 @@ def sca(L, y, beta=1.0, max_rules=20, max_len=3, min_support=10, min_precision=0
         if tp / max(tp + fp, 1) < min_precision:
             break
         rules.append(rule)
-        active = active & ~(cov & y)      # remove covered positives
+        active = active & ~cov       
     return rules
