@@ -23,21 +23,37 @@ def load_synthetic(n=20000, seed=0):
     return pd.DataFrame(X, columns=[f"f{i}" for i in range(10)]), y.astype(bool), []
 
 def run_once(df, y, cat, seed, args, name):
-    df_tr, df_te, y_tr, y_te = train_test_split(df, y, test_size=0.3, stratify=y, random_state=seed)
-    b = Binarizer(n_bins=args.bins).fit(df_tr, cat)          # fit on TRAIN only
-    L_tr, L_te, names = b.transform(df_tr), b.transform(df_te), b.names
-    kw = dict(max_rules=args.max_rules, max_len=args.max_len, min_support=args.min_support)
+    df_tr, df_te, y_tr, y_te = train_test_split(
+        df,
+        y,
+        test_size=0.3,
+        stratify=y, # ensures that the proportion of each class is approximately preserved across both sets
+        random_state=seed
+    )
+
+    # expand numerical feature to a series of complete categorical features
+    b = Binarizer(n_bins=args.bins).fit(df_tr, cat) # learn bins from TRAIN data only
+    L_tr, L_te, names = b.transform(df_tr), b.transform(df_te), b.names # apply binning to dataset
+
+    # arguments for spectral_rules function
+    kw = dict(
+        max_rules=args.max_rules, # limit number of rules generated to max_rules
+        max_len=args.max_len, # maximum number of conditions in one rule
+        min_support=args.min_support # minimum support required for a rule to be considered
+    )
     res, fronts = {}, {}
 
     # --- Ours: SpectralRules + PORS ---
     t0 = time.time()
-    pool = spectral_rules(L_tr, y_tr, **kw)
+    pool = spectral_rules(L_tr, y_tr, **kw) # spectral_rules creates a set of rules which predict a positive label (y=1), based on patterns in TRAIN
     t1 = time.time()
-    covs_tr = [coverage(L_tr, r) for r in pool]
-    front = pors(covs_tr, y_tr, max_rules=args.pors_k)
+
+    covs_tr = [coverage(L_tr, r) for r in pool] # for every rule, return an array of 1s and 0s of whether each TRAIN datapoint is covered by that rule
+    front = pors(covs_tr, y_tr, max_rules=args.pors_k) # pors creates rule subsets that define the pareto front of precision vs recall, and each returned rule subset contains the indices of the selected rules and the combined precision and recall
     t2 = time.time()
-    test_covs = [np.logical_or.reduce([coverage(L_te, pool[i]) for i in s["ids"]]) for s in front]
-    fronts["SpectralRules + PORS"] = points_from_covs(test_covs, y_te)
+
+    test_covs = [np.logical_or.reduce([coverage(L_te, pool[i]) for i in s["ids"]]) for s in front] # evaluate the coverage of the rule subsets on TEST
+    fronts["SpectralRules + PORS"] = points_from_covs(test_covs, y_te) # determine how well the covered data points (predicted 1s) align with the actual test labels: calculates the precision and recall
     res["pool_size"] = len(pool)
     res["time_spectral_s"] = t1 - t0
     res["time_pors_s"] = t2 - t1
