@@ -13,4 +13,17 @@ def uniform_sampling(front, k):
 
     # iterate ideal distances and choose the data point which is the closest and then mark it as "used"
 
-    return [] # return which sets to expand
+    return []
+
+
+def hv_ss(front, k):
+    # calculate hypervolume indicator for every set
+
+    # sort sets by hypervolume
+
+    # greedily select the first set, with largest hv
+
+    # for the next k-1 sets, try to select the one with largest hv. 
+    # Check the largest hv set - recalculate its hv contribution relative to the already selected set. If this new hv is no longer the max, then try the next set instead
+
+    return []
