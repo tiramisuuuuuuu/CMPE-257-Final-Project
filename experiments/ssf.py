@@ -159,3 +159,144 @@ def hv_ss(front, k):
         )
 
     return [keys[idx] for idx in selected]
+
+
+def igd(front, k):
+    """
+    Greedy IGD subset selection.
+
+    Selects k solutions that minimize Inverted Generational Distance.
+
+    Returns the selected rule_subset keys.
+    """
+
+    if front.empty or k <= 0:
+        return []
+
+    if k >= len(front):
+        return front["rule_subset"].tolist()
+
+    # Objectives: x = recall, y = precision
+    points = front[["recall", "precision"]].to_numpy()
+    keys = front["rule_subset"].tolist()
+
+    # 1. Calculate Euclidean distances between all pairs
+    distances = np.linalg.norm(
+        points[:, None, :] - points[None, :, :],
+        axis=2
+    )
+
+    # 2. Track minimum distance from each reference point to any selected solution
+    min_distances = np.full(len(points), np.inf)
+
+    selected = []
+    remaining = list(range(len(points)))
+
+    # 3. Greedily select k solutions
+    for _ in range(k):
+
+        best_idx = None
+        best_igd = np.inf
+
+        for idx in remaining:
+
+            # Calculate distances after adding this candidate
+            new_distances = np.minimum(
+                min_distances,
+                distances[:, idx]
+            )
+
+            # Calculate resulting IGD
+            igd = np.mean(new_distances)
+
+            if igd < best_igd:
+                best_igd = igd
+                best_idx = idx
+
+        if best_idx is None:
+            break
+
+        # 4. Add the best candidate
+        selected.append(best_idx)
+        remaining.remove(best_idx)
+
+        # Update minimum distances
+        min_distances = np.minimum(
+            min_distances,
+            distances[:, best_idx]
+        )
+
+    return [keys[idx] for idx in selected]
+
+
+def igd_plus(front, k):
+    """
+    Greedy IGD+ subset selection.
+
+    Selects k solutions that minimize Inverted Generational
+    Distance Plus.
+
+    Assumes precision and recall are maximization objectives.
+
+    Returns the selected rule_subset keys.
+    """
+
+    if front.empty or k <= 0:
+        return []
+
+    if k >= len(front):
+        return front["rule_subset"].tolist()
+
+    # Objectives: x = recall, y = precision
+    points = front[["recall", "precision"]].to_numpy()
+    keys = front["rule_subset"].tolist()
+
+    # 1. Calculate directional IGD+ distances
+    differences = points[:, None, :] - points[None, :, :]
+
+    distances = np.linalg.norm(
+        np.maximum(differences, 0),
+        axis=2
+    )
+
+    # 2. Track minimum IGD+ distance for each reference point
+    min_distances = np.full(len(points), np.inf)
+
+    selected = []
+    remaining = list(range(len(points)))
+
+    # 3. Greedily select k solutions
+    for _ in range(k):
+
+        best_idx = None
+        best_igd_plus = np.inf
+
+        for idx in remaining:
+
+            # Calculate distances after adding this candidate
+            new_distances = np.minimum(
+                min_distances,
+                distances[:, idx]
+            )
+
+            # Calculate resulting IGD+
+            igd_plus = np.mean(new_distances)
+
+            if igd_plus < best_igd_plus:
+                best_igd_plus = igd_plus
+                best_idx = idx
+
+        if best_idx is None:
+            break
+
+        # 4. Add the best candidate
+        selected.append(best_idx)
+        remaining.remove(best_idx)
+
+        # Update minimum distances
+        min_distances = np.minimum(
+            min_distances,
+            distances[:, best_idx]
+        )
+
+    return [keys[idx] for idx in selected]
