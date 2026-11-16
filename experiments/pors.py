@@ -1,8 +1,15 @@
+
 from paretoset import paretoset
 import pandas as pd
+import numpy as np
+from .ssf import uniform_sampling, hv_ss
 
 def pareto_optimal(rule_subsets):
-    # extract objective values while preserving original keys
+    """Keep only Pareto-optimal subsets, modifying rule_subsets in place."""
+
+    if not rule_subsets:
+        return pd.DataFrame(columns=["rule_subset", "precision", "recall"])
+
     objectives = pd.DataFrame.from_dict(
         {
             key: {
@@ -27,10 +34,9 @@ def pareto_optimal(rule_subsets):
         ascending=[False, True]
     ).reset_index(drop=True)
 
-    # extract Pareto-optimal keys
+    # Remove non-Pareto-optimal subsets from original dictionary
     pareto_keys = set(pareto_df["rule_subset"])
 
-    # modify original dictionary in place
     for key in list(rule_subsets.keys()):
         if key not in pareto_keys:
             del rule_subsets[key]
@@ -39,37 +45,130 @@ def pareto_optimal(rule_subsets):
 
 
 def precision_recall(cov, y):
-    tp = (cov & y).sum(); fp = (cov & ~y).sum()
-    return tp / max(tp + fp, 1), tp / max(y.sum(), 1)
+    """Calculate precision and recall for a combined rule coverage."""
+
+    cov = np.asarray(cov, dtype=bool)
+    y = np.asarray(y, dtype=bool)
+
+    tp = np.sum(cov & y)
+    fp = np.sum(cov & ~y)
+
+    precision = tp / max(tp + fp, 1)
+    recall = tp / max(np.sum(y), 1)
+
+    return precision, recall
 
 
-def pors(rule_covs, y, max_rules=10, max_front=200):
-    # 0. create singleton sets for every rule
-    rule_subsets = {
-        frozenset({index}): {
+def pors(rule_covs, y, max_rounds=50, max_front=200,
+         sampling="hv_ss", k=10):
+    """
+    Pareto Optimal Rule Subset Search.
+
+    Args:
+        rule_covs: List of boolean coverage arrays, one per rule.
+        y: Ground-truth boolean labels.
+        max_rounds: Maximum number of iterations before force exiting.
+        max_front: Maximum number of Pareto solutions sampled per iteration.
+        sampling: 'hv_ss' or 'uniform_sampling'.
+
+    Returns:
+        List of Pareto-optimal rule subsets.
+    """
+
+    rule_covs = [np.asarray(cov, dtype=bool) for cov in rule_covs]
+    y = np.asarray(y, dtype=bool)
+
+    n_rules = len(rule_covs)
+
+    if n_rules == 0:
+        return []
+
+    # 0. Create singleton subsets for every rule
+    rule_subsets = {}
+
+    for index, cov in enumerate(rule_covs):
+        precision, recall = precision_recall(cov, y)
+
+        key = frozenset({index})
+
+        rule_subsets[key] = {
             "indices": {index},
-            "coverage": cov,
-            "precision": precision_recall(cov, y[index])[0],
-            "recall": precision_recall(cov, y[index])[1],
+            "coverage": cov.copy(),
+            "precision": precision,
+            "recall": recall,
         }
-        for index, cov in enumerate(rule_covs)
-    }
 
-
-    # 1. reduce sets to only include pareto optimal sets, sets which are not dominated in both precision and recall by any other set
+    # 1. Reduce to Pareto-optimal singleton subsets
     sorted_pareto_front = pareto_optimal(rule_subsets)
 
-    # 3. use ssf to sample only k sets from all of our sets
+    # 2. Iteratively expand the Pareto front
+    for _ in range(max_rounds):
+        # 3. Sample k subsets from the current Pareto front
+        if sampling == "hv_ss":
+            selected_keys = hv_ss(sorted_pareto_front, k)
+        elif sampling == "uniform_sampling":
+            selected_keys = uniform_sampling(sorted_pareto_front, k)
+        else:
+            raise ValueError(
+                "sampling must be 'hv_ss' or 'uniform_sampling'"
+            )
 
-    # 4. expand those k sets by adding one rule from our initial pool of rules, test every single rule on the k subsets
+        # 4. Expand each selected subset by adding one rule
+        candidates = {
+            key: value.copy()
+            for key, value in rule_subsets.items()
+        }
 
-    # 5. reevaluate all sets and keep only pareto optimal
+        for key in selected_keys:
 
-    # 6. if pareto front hasn't changed exit, otherwise repeat 3-6
+            subset = rule_subsets[key]
 
-    """ example output: [
-            {"ids": [2,5], "prec": 0.2, "rec": 0.75},
-            {"ids": [1,2], "prec": 0.5, "rec": 0.63},
-        ]
-    """
-    return []
+            for index in range(n_rules):
+
+                if index in subset["indices"]:
+                    continue
+
+                new_indices = subset["indices"] | {index}
+                new_key = frozenset(new_indices)
+
+                # Skip subsets that already exist
+                if new_key in candidates:
+                    continue
+
+                # Combine rule coverage using logical OR
+                new_cov = subset["coverage"] | rule_covs[index]
+
+                precision, recall = precision_recall(new_cov, y)
+
+                candidates[new_key] = {
+                    "indices": new_indices,
+                    "coverage": new_cov,
+                    "precision": precision,
+                    "recall": recall,
+                }
+
+        # 5. Reevaluate all candidates and retain Pareto-optimal ones
+        previous_keys = set(rule_subsets.keys())
+
+        rule_subsets = candidates
+
+        sorted_pareto_front = pareto_optimal(rule_subsets)
+
+        current_keys = set(rule_subsets.keys())
+
+        # 6. Stop if the Pareto front has not changed
+        if current_keys == previous_keys:
+            break
+
+    # Return an array containing the rule subsets and their precision & reccall
+    return [
+        {
+            "ids": sorted(value["indices"]),
+            "prec": value["precision"],
+            "rec": value["recall"],
+        }
+        for value in sorted(
+            rule_subsets.values(),
+            key=lambda x: (-x["precision"], x["recall"])
+        )
+    ]
