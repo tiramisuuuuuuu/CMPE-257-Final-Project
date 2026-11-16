@@ -67,7 +67,7 @@ def pors(rule_covs, y, max_rounds=50, max_front=200,
     Args:
         rule_covs: List of boolean coverage arrays, one per rule.
         y: Ground-truth boolean labels.
-        max_rounds: Maximum number of iterations before force exiting.
+        max_rounds: Maximum number of iterations before force exiting; also caps how many rules may appear in a subset.
         max_front: Maximum number of Pareto solutions sampled per iteration.
         sampling: 'hv_ss' or 'uniform_sampling'.
 

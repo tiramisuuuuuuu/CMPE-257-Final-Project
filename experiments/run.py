@@ -12,7 +12,8 @@ from sklearn.model_selection import train_test_split
 from src.prep import LOADERS, Binarizer
 from src.sca import coverage
 from src.spectral import spectral_rules
-from src.pors import pors, brute_force
+from .pors import pors
+from src.pors import brute_force
 from src.baselines import single_sca_baseline, tree_baseline
 from src.eval import points_from_covs, hypervolume, precision_at_recall, plot_fronts, rule_to_text
 
@@ -49,7 +50,7 @@ def run_once(df, y, cat, seed, args, name):
     t1 = time.time()
 
     covs_tr = [coverage(L_tr, r) for r in pool] # for every rule, return an array of 1s and 0s of whether each TRAIN datapoint is covered by that rule
-    front = pors(covs_tr, y_tr, max_rules=args.pors_k) # pors creates rule subsets that define the pareto front of precision vs recall, and each returned rule subset contains the indices of the selected rules and the combined precision and recall
+    front = pors(covs_tr, y_tr, k=args.pors_k) # pors creates rule subsets that define the pareto front of precision vs recall, and each returned rule subset contains the indices of the selected rules and the combined precision and recall
     t2 = time.time()
 
     test_covs = [np.logical_or.reduce([coverage(L_te, pool[i]) for i in s["ids"]]) for s in front] # evaluate the coverage of the rule subsets on TEST
@@ -62,7 +63,7 @@ def run_once(df, y, cat, seed, args, name):
     if args.brute:
         small = covs_tr[:15]
         t3 = time.time(); bf = brute_force(small, y_tr); t4 = time.time()
-        pf_small = pors(small, y_tr, max_rules=15)
+        pf_small = pors(small, y_tr, max_rounds=15)
         res["brute_time_s"] = t4 - t3
         res["brute_hv_train"] = hypervolume([(s["prec"], s["rec"]) for s in bf])
         res["pors_small_hv_train"] = hypervolume([(s["prec"], s["rec"]) for s in pf_small])
