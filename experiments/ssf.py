@@ -79,24 +79,20 @@ def _hypervolume(points, reference=(0.0, 0.0)):
     if len(points) == 0:
         return 0.0
 
-    # Sort by descending precision
-    points = points[np.argsort(-points[:, 0])]
+    # Sort by ascending recall (~ descending precision)
+    points = points[np.argsort(points[:, 0])]
 
     area = 0.0
-    max_y = ref_y
 
     # Integrate the union of dominated rectangles
     for i, (x, y) in enumerate(points):
-
-        max_y = max(max_y, y)
-
-        next_x = (
-            points[i + 1, 0]
-            if i + 1 < len(points)
-            else ref_x
+        prev_x = (
+            points[i - 1, 0]
+            if i - 1 >= 0
+            else 0
         )
 
-        area += (x - max(next_x, ref_x)) * (max_y - ref_y)
+        area += (x - prev_x) * (y - ref_y)
 
     return area
 
@@ -117,13 +113,13 @@ def hv_ss(front, k):
     if k >= len(front):
         return front["rule_subset"].tolist()
 
-    points = front[["precision", "recall"]].to_numpy()
+    points = front[["recall", "precision"]].to_numpy()
     keys = front["rule_subset"].tolist()
 
     selected = []
     remaining = list(range(len(points)))
 
-    # Reference point for precision and recall maximization
+    # Reference point for recall and precision
     reference = (0.0, 0.0)
 
     # 1. Calculate initial hypervolume
