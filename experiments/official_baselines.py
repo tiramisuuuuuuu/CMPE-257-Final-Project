@@ -31,6 +31,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OFFICIAL = ROOT / "official"
 OUT_DIR = ROOT / "results" / "official"
 
+# Their code uses flat imports ("from utils..."), so its folder must be on the path.
+# This runs at the top of the file so the worker processes on Windows get it too.
+sys.path.insert(0, str(OFFICIAL / "pors"))
+
 DATASETS = ["default", "bank", "credit", "fraud"]
 TRIALS = [1, 2, 3, 4, 5]
 POOLS = ["sr", "te"]
@@ -46,8 +50,7 @@ MAX_ROUND = 50
 # Loading
 # --------------------------------------------------------------------------- #
 def import_official():
-    """Import the official modules (they use flat imports, so add their folder)."""
-    sys.path.insert(0, str(OFFICIAL / "pors"))
+    """Import the official modules."""
     from crsl import greedy_opt
     from pors import init_solutions, pors
     from utils.data_utils import data_preprocess, rule_predict
@@ -215,7 +218,7 @@ def main() -> None:
     ap.add_argument("--datasets", nargs="+", default=DATASETS, choices=DATASETS)
     ap.add_argument("--trials", nargs="+", type=int, default=TRIALS)
     ap.add_argument("--pools", nargs="+", default=POOLS, choices=POOLS)
-    ap.add_argument("--n_process", type=int, default=4)
+    ap.add_argument("--n_process", type=int, default=1)
     args = ap.parse_args()
 
     off = import_official()
