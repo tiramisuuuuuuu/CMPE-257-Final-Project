@@ -49,6 +49,7 @@ MAX_ROUND = 50
 # --------------------------------------------------------------------------- #
 # Loading
 # --------------------------------------------------------------------------- #
+# noinspection PyUnresolvedReferences
 def import_official():
     """Import the official modules."""
     from crsl import greedy_opt
