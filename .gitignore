@@ -3,7 +3,8 @@ data/processed/
 venv/
 __pycache__/
 .ipynb_checkpoints/
-official/
+/official/
 venv-official/
 results/synthetic_*
 results/rules/
+.idea/
