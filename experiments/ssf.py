@@ -1,6 +1,8 @@
 # The paper tests 6 SSF methods, each one may choose different sets from the Pareto front to explore / expand
 
 import numpy as np
+from .pareto import pareto_optimal_df
+
 
 def uniform_sampling(front, k):
     """
@@ -159,6 +161,78 @@ def hv_ss(front, k):
         )
 
     return [keys[idx] for idx in selected]
+
+
+def hvc_ss(front, previous_front, k=10):
+    """
+    Greedy Hypervolume Contribution (HVC) selection.
+
+    Selects k candidates from the current Pareto front based
+    on their marginal hypervolume contribution relative to
+    the previous PORS iteration's Pareto front.
+
+    Args:
+        front: Current Pareto front DataFrame.
+        previous_front: Previous iteration's Pareto front DataFrame.
+        k: Number of candidates to select.
+
+    Returns:
+        List of selected rule_subset keys.
+    """
+
+    if front.empty or k <= 0:
+        return []
+
+    if previous_front is None or previous_front.empty:
+        return hv_ss(front, k)
+
+    points = front[["recall", "precision"]].to_numpy()
+    previous_points = previous_front[
+        ["recall", "precision"]
+    ].to_numpy()
+
+    keys = front["rule_subset"].tolist()
+
+    selected_indices = []
+    candidate_indices = list(range(len(points)))
+
+    while len(selected_indices) < k:
+        best_idx = None
+        best_hvc = -np.inf
+
+        for idx in candidate_indices:
+            # Calculate the contribution of this candidate
+            # relative to the current reference front.
+            combined = np.vstack([
+                previous_points,
+                points[idx:idx + 1]
+            ])
+
+            contribution = (
+                _hypervolume(combined)
+                - _hypervolume(previous_points)
+            )
+
+            if contribution > best_hvc:
+                best_hvc = contribution
+                best_idx = idx
+
+        if best_idx is None:
+            break
+
+        selected_indices.append(best_idx)
+        candidate_indices.remove(best_idx)
+
+        # Update the reference front with the selected candidate.
+        previous_points = np.vstack([
+            previous_points,
+            points[best_idx]
+        ])
+
+        # Keep only non-dominated solutions.
+        pareto_optimal_df(previous_points)
+
+    return [keys[idx] for idx in selected_indices]
 
 
 def igd(front, k):

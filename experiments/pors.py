@@ -1,47 +1,6 @@
-
-from paretoset import paretoset
-import pandas as pd
 import numpy as np
-from .ssf import uniform_sampling, hv_ss
-
-def pareto_optimal(rule_subsets):
-    """Keep only Pareto-optimal subsets, modifying rule_subsets in place."""
-
-    if not rule_subsets:
-        return pd.DataFrame(columns=["rule_subset", "precision", "recall"])
-
-    objectives = pd.DataFrame.from_dict(
-        {
-            key: {
-                "precision": value["precision"],
-                "recall": value["recall"],
-            }
-            for key, value in rule_subsets.items()
-        },
-        orient="index"
-    )
-
-    objectives.index.name = "rule_subset"
-    objectives = objectives.reset_index()
-
-    mask = paretoset(
-        objectives[["precision", "recall"]],
-        sense=["max", "max"]
-    )
-
-    pareto_df = objectives[mask].sort_values(
-        by=["precision", "recall"],
-        ascending=[False, True]
-    ).reset_index(drop=True)
-
-    # Remove non-Pareto-optimal subsets from original dictionary
-    pareto_keys = set(pareto_df["rule_subset"])
-
-    for key in list(rule_subsets.keys()):
-        if key not in pareto_keys:
-            del rule_subsets[key]
-
-    return pareto_df
+from .ssf import uniform_sampling, hv_ss, hvc_ss
+from .pareto import pareto_optimal
 
 
 def precision_recall(cov, y):
@@ -101,10 +60,16 @@ def pors(rule_covs, y, max_rounds=50, max_front=200,
     # 1. Reduce to Pareto-optimal singleton subsets
     sorted_pareto_front = pareto_optimal(rule_subsets)
 
+    # Used for hvc sampling, ignore if configured for different SSF
+    previous_pareto_front = None
+
     # 2. Iteratively expand the Pareto front
     for _ in range(max_rounds):
         # 3. Sample k subsets from the current Pareto front
-        if sampling == "hv_ss":
+        if sampling == "hvc_ss":
+            selected_keys = hvc_ss(sorted_pareto_front, previous_pareto_front, k)
+            previous_pareto_front = sorted_pareto_front
+        elif sampling == "hv_ss":
             selected_keys = hv_ss(sorted_pareto_front, k)
         elif sampling == "uniform_sampling":
             selected_keys = uniform_sampling(sorted_pareto_front, k)
