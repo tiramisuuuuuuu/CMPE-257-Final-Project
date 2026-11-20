@@ -1,0 +1,227 @@
+precision=1.000 recall=0.025 (train)
+   IF poutcome == success AND duration > 544 AND housing == no AND education == tertiary
+   IF poutcome == success AND month == sep AND age > 32 AND pdays <= 185 AND balance <= 3572 AND day <= 28
+   IF poutcome == success AND duration > 147 AND month == nov AND day <= 16 AND balance <= 1859 AND contact == cellular
+
+precision=0.774 recall=0.210 (train)
+   IF poutcome == success AND duration > 544 AND housing == no AND education == tertiary
+   IF poutcome == success AND duration > 222 AND housing == no AND balance > 133 AND day > 16 AND balance > 1859
+   IF poutcome == success AND month == sep AND age > 32 AND pdays <= 185 AND balance <= 3572 AND day <= 28
+   IF poutcome == success AND duration > 222 AND housing == no AND contact == cellular AND campaign > 1 AND age <= 56
+   IF poutcome == success AND duration > 179 AND pdays <= 185 AND marital == married AND age > 32 AND contact == cellular
+   IF poutcome == success AND duration > 147 AND housing == no AND day <= 28 AND age <= 36
+   IF duration > 544 AND month == aug AND day <= 16 AND age <= 46 AND age > 29 AND pdays <= 185
+   IF duration > 544 AND contact == cellular AND campaign <= 1 AND balance <= 705 AND day <= 16 AND day > 7
+   IF month == mar AND duration > 179 AND day <= 24 AND previous <= 2 AND balance > 23
+   IF month == oct AND day > 20 AND duration > 89
+
+precision=0.694 recall=0.372 (train)
+   IF poutcome == success AND duration > 544 AND housing == no AND education == tertiary
+   IF poutcome == success AND duration > 222 AND housing == no AND balance > 133 AND day > 16 AND balance > 1859
+   IF poutcome == success AND month == sep AND age > 32 AND pdays <= 185 AND balance <= 3572 AND day <= 28
+   IF poutcome == success AND duration > 222 AND housing == no AND contact == cellular AND campaign > 1 AND age <= 56
+   IF poutcome == success AND duration > 179 AND pdays <= 185 AND marital == married AND age > 32 AND contact == cellular
+   IF poutcome == success AND duration > 147 AND housing == no AND day <= 28 AND age <= 36
+   IF duration > 544 AND job == retired AND contact == telephone AND balance > 0 AND loan == no AND campaign <= 4
+   IF month == mar AND duration > 179 AND day <= 24 AND previous <= 2 AND balance > 23
+   IF duration > 544 AND month == aug AND day <= 16 AND age > 29 AND campaign <= 5
+   IF duration > 544 AND contact == cellular AND month == may AND age > 29 AND default == no
+   IF month == oct AND day > 20 AND duration > 117 AND duration <= 544 AND campaign <= 3
+   IF month == sep AND duration > 222 AND contact == cellular AND day <= 24 AND campaign <= 5
+   IF poutcome == success AND duration > 147 AND balance <= 1859 AND campaign <= 5 AND loan == no
+   IF month == dec AND duration > 222 AND contact == cellular
+   IF month == apr AND housing == no AND duration > 179 AND pdays <= -1 AND balance > 23 AND balance <= 3572
+   IF month == feb AND day > 10 AND duration > 59 AND default == no
+
+precision=0.621 recall=0.521 (train)
+   IF poutcome == success AND duration > 544 AND housing == no AND education == tertiary
+   IF poutcome == success AND duration > 222 AND housing == no AND balance > 133 AND day > 16 AND balance > 1859
+   IF poutcome == success AND month == sep AND age > 32 AND pdays <= 185 AND balance <= 3572 AND day <= 28
+   IF poutcome == success AND duration > 222 AND housing == no AND contact == cellular AND campaign > 1 AND age <= 56
+   IF poutcome == success AND duration > 179 AND pdays <= 185 AND marital == married AND age > 32 AND contact == cellular
+   IF poutcome == success AND duration > 147 AND housing == no AND day <= 28 AND age <= 36
+   IF month == mar AND duration > 179 AND day <= 24 AND previous <= 2 AND balance > 23
+   IF duration > 544 AND marital == divorced AND day > 7 AND age <= 46 AND loan == no AND pdays <= 185
+   IF duration > 544 AND month == aug AND day <= 16 AND age > 29 AND campaign <= 5
+   IF duration > 544 AND contact == cellular AND month == may AND age > 29 AND default == no
+   IF month == oct AND day > 20 AND duration > 117 AND duration <= 544 AND campaign <= 3
+   IF duration > 544 AND contact == cellular AND day > 24 AND month == apr AND pdays <= 185 AND loan == no
+   IF month == sep AND duration > 222 AND contact == cellular AND day <= 24 AND campaign <= 5
+   IF poutcome == success AND duration > 147 AND balance <= 1859 AND campaign <= 5 AND loan == no
+   IF duration > 544 AND marital == single AND day <= 28
+   IF month == apr AND housing == no AND duration > 179 AND pdays <= -1 AND balance > 23 AND balance <= 3572
+   IF month == dec AND duration > 147 AND campaign <= 5
+   IF month == feb AND day > 10 AND duration > 59 AND default == no
+   IF month == nov AND day <= 16 AND duration > 89 AND campaign <= 4 AND day > 5
+   IF month == jun AND contact == cellular AND duration > 147 AND age <= 56 AND balance <= 3572 AND age > 29
+
+precision=0.558 recall=0.685 (train)
+   IF poutcome == success AND duration > 544 AND housing == no AND education == tertiary
+   IF poutcome == success AND duration > 222 AND housing == no AND balance > 133 AND day > 16 AND balance > 1859
+   IF poutcome == success AND month == sep AND age > 32 AND pdays <= 185 AND balance <= 3572 AND day <= 28
+   IF poutcome == success AND duration > 222 AND housing == no AND contact == cellular AND campaign > 1 AND age <= 56
+   IF poutcome == success AND duration > 179 AND pdays <= 185 AND marital == married AND age > 32 AND contact == cellular
+   IF poutcome == success AND duration > 147 AND housing == no AND day <= 28 AND age <= 36
+   IF month == mar AND duration > 179 AND day <= 24 AND previous <= 2 AND balance > 23
+   IF duration > 544 AND marital == divorced AND day > 7 AND age <= 46 AND loan == no AND pdays <= 185
+   IF duration > 544 AND month == aug AND day <= 16 AND age > 29 AND campaign <= 5
+   IF duration > 544 AND contact == cellular AND month == may AND age > 29 AND default == no
+   IF month == oct AND day > 20 AND duration > 117 AND duration <= 544 AND campaign <= 3
+   IF month == sep AND duration > 222 AND contact == cellular AND day <= 24 AND campaign <= 5
+   IF poutcome == success AND duration > 147 AND balance <= 1859 AND campaign <= 5 AND loan == no
+   IF month == oct AND duration > 278 AND day > 7 AND balance > 276 AND age > 32
+   IF duration > 544 AND contact == cellular AND pdays <= 185 AND balance > 23 AND loan == no
+   IF month == mar AND duration > 89 AND day <= 28 AND loan == no AND campaign <= 5
+   IF duration > 544 AND marital == single AND day <= 28
+   IF duration > 544 AND housing == no AND age > 32 AND day <= 24 AND loan == no
+   IF month == apr AND housing == no AND duration > 179 AND pdays <= -1 AND balance > 23 AND balance <= 3572
+   IF month == apr AND day > 20 AND duration > 222 AND duration <= 544
+   IF month == apr AND housing == no AND duration > 117 AND pdays <= -1 AND day <= 24 AND balance > 23
+   IF month == dec AND duration > 147 AND campaign <= 5
+   IF job == student AND housing == no AND duration > 147 AND day > 5 AND age <= 39 AND loan == no
+   IF month == feb AND day > 10 AND duration > 59 AND default == no
+   IF month == jan AND day <= 16 AND balance > 276 AND duration > 89 AND loan == no
+   IF job == retired AND duration > 179 AND age > 56 AND housing == no AND campaign <= 3 AND balance <= 3572
+   IF pdays > -1 AND month == jul AND balance > 133 AND day > 10 AND duration > 59 AND campaign <= 4
+   IF month == nov AND day <= 16 AND duration > 89 AND campaign <= 4 AND day > 5
+   IF month == jun AND contact == cellular AND duration > 147 AND age <= 56 AND balance <= 3572 AND age > 29
+
+precision=0.523 recall=0.772 (train)
+   IF poutcome == success AND duration > 544 AND housing == no AND education == tertiary
+   IF poutcome == success AND duration > 222 AND housing == no AND balance > 133 AND day > 16 AND balance > 1859
+   IF poutcome == success AND month == sep AND age > 32 AND pdays <= 185 AND balance <= 3572 AND day <= 28
+   IF poutcome == success AND duration > 222 AND housing == no AND contact == cellular AND campaign > 1 AND age <= 56
+   IF poutcome == success AND duration > 179 AND pdays <= 185 AND marital == married AND age > 32 AND contact == cellular
+   IF poutcome == success AND duration > 147 AND housing == no AND day <= 28 AND age <= 36
+   IF month == mar AND duration > 179 AND day <= 24 AND previous <= 2 AND balance > 23
+   IF duration > 544 AND marital == divorced AND day > 7 AND age <= 46 AND loan == no AND pdays <= 185
+   IF duration > 544 AND month == aug AND day <= 16 AND age > 29 AND campaign <= 5
+   IF duration > 544 AND contact == cellular AND month == may AND age > 29 AND default == no
+   IF month == oct AND day > 20 AND duration > 117 AND duration <= 544 AND campaign <= 3
+   IF month == sep AND duration > 222 AND contact == cellular AND day <= 24 AND campaign <= 5
+   IF poutcome == success AND duration > 147 AND balance <= 1859 AND campaign <= 5 AND loan == no
+   IF month == oct AND duration > 278 AND day > 7 AND balance > 276 AND age > 32
+   IF duration > 544 AND contact == cellular AND pdays <= 185 AND balance > 23 AND loan == no
+   IF month == mar AND duration > 89 AND day <= 28 AND loan == no AND campaign <= 5
+   IF duration > 544 AND marital == single AND day <= 28
+   IF duration > 544 AND day > 13 AND previous <= 2
+   IF duration > 544 AND housing == no AND age > 32 AND day <= 24 AND loan == no
+   IF duration > 368 AND age > 56 AND housing == no AND campaign <= 3 AND loan == no AND previous <= 2
+   IF month == apr AND housing == no AND duration > 179 AND pdays <= -1 AND balance > 23 AND balance <= 3572
+   IF month == apr AND day > 20 AND duration > 222 AND duration <= 544
+   IF month == apr AND housing == no AND duration > 117 AND pdays <= -1 AND day <= 24 AND balance > 23
+   IF duration > 544 AND contact == cellular
+   IF month == sep AND duration > 179 AND campaign <= 5
+   IF month == dec AND duration > 147 AND campaign <= 5
+   IF job == student AND housing == no AND duration > 147 AND day > 5 AND age <= 39 AND loan == no
+   IF month == feb AND day > 10 AND duration > 59 AND default == no
+   IF poutcome == failure AND month == aug AND duration > 147 AND age <= 56 AND contact == cellular
+   IF month == jan AND day <= 16 AND balance > 276 AND duration > 89 AND loan == no
+   IF day <= 5 AND duration > 179 AND contact == cellular AND housing == no AND age <= 32 AND balance > 133
+   IF month == nov AND day <= 16 AND duration > 89 AND campaign <= 4 AND day > 5
+   IF month == jun AND contact == cellular AND duration > 147 AND age <= 56 AND balance <= 3572 AND age > 29
+   IF pdays > -1 AND month == jul AND balance > 23 AND campaign <= 4 AND age <= 56
+   IF month == nov AND day <= 16 AND campaign <= 4 AND duration > 59 AND age > 29 AND campaign <= 2
+
+precision=0.459 recall=0.845 (train)
+   IF poutcome == success AND duration > 544 AND housing == no AND education == tertiary
+   IF poutcome == success AND duration > 222 AND housing == no AND balance > 133 AND day > 16 AND balance > 1859
+   IF poutcome == success AND month == sep AND age > 32 AND pdays <= 185 AND balance <= 3572 AND day <= 28
+   IF poutcome == success AND duration > 222 AND housing == no AND contact == cellular AND campaign > 1 AND age <= 56
+   IF poutcome == success AND duration > 179 AND pdays <= 185 AND marital == married AND age > 32 AND contact == cellular
+   IF poutcome == success AND duration > 147 AND housing == no AND day <= 28 AND age <= 36
+   IF month == mar AND duration > 179 AND day <= 24 AND previous <= 2 AND balance > 23
+   IF duration > 544 AND marital == divorced AND day > 7 AND age <= 46 AND loan == no AND pdays <= 185
+   IF duration > 544 AND month == aug AND day <= 16 AND age > 29 AND campaign <= 5
+   IF duration > 544 AND contact == cellular AND month == may AND age > 29 AND default == no
+   IF month == oct AND day > 20 AND duration > 117 AND duration <= 544 AND campaign <= 3
+   IF month == sep AND duration > 222 AND contact == cellular AND day <= 24 AND campaign <= 5
+   IF poutcome == success AND duration > 147 AND balance <= 1859 AND campaign <= 5 AND loan == no
+   IF month == oct AND duration > 278 AND day > 7 AND balance > 276 AND age > 32
+   IF duration > 544 AND contact == cellular AND pdays <= 185 AND balance > 23 AND loan == no
+   IF month == mar AND duration > 89 AND day <= 28 AND loan == no AND campaign <= 5
+   IF duration > 544 AND marital == single AND day <= 28
+   IF duration > 544 AND day > 13 AND previous <= 2
+   IF month == apr AND housing == no AND duration > 179 AND pdays <= -1 AND balance > 23 AND balance <= 3572
+   IF month == apr AND day > 20 AND duration > 222 AND duration <= 544
+   IF month == apr AND housing == no AND duration > 117 AND pdays <= -1 AND day <= 24 AND balance > 23
+   IF duration > 544
+   IF month == dec AND duration > 147 AND campaign <= 5
+   IF job == student AND housing == no AND duration > 147 AND day > 5 AND age <= 39 AND loan == no
+   IF month == feb AND day > 10 AND duration > 59 AND default == no
+   IF duration > 278 AND contact == cellular AND month == may AND pdays <= 185 AND age <= 39 AND balance <= 705
+   IF duration > 368 AND housing == no AND contact == cellular AND loan == no AND balance > 0
+   IF job == retired AND duration > 179 AND age > 56 AND housing == no AND campaign <= 3 AND balance <= 3572
+   IF age <= 29 AND housing == no AND duration > 117 AND balance > 276 AND loan == no AND campaign <= 2
+   IF month == nov AND day <= 16 AND duration > 89 AND campaign <= 4 AND day > 5
+   IF month == jun AND contact == cellular AND duration > 147 AND age <= 56 AND balance <= 3572 AND age > 29
+   IF month == aug AND campaign <= 1 AND duration > 179 AND day <= 20 AND age <= 51 AND balance > 0
+   IF poutcome == success AND duration > 89 AND default == no
+   IF previous > 2 AND duration > 147 AND loan == no AND housing == no AND balance > 23
+   IF pdays > -1 AND month == jul AND balance > 23 AND campaign <= 4 AND age <= 56
+   IF month == nov AND day <= 16 AND campaign <= 4 AND duration > 59 AND age > 29 AND campaign <= 2
+
+precision=0.371 recall=0.917 (train)
+   IF month == mar AND duration > 89 AND day <= 28 AND loan == no AND campaign <= 5
+   IF duration > 544 AND contact == cellular
+   IF duration > 544
+   IF month == oct AND duration > 89 AND day > 5 AND duration > 117
+   IF month == feb AND day > 10 AND duration > 59 AND default == no
+   IF month == sep AND duration > 89 AND campaign <= 3
+   IF month == apr AND housing == no AND duration > 117
+   IF duration > 368 AND contact == cellular AND campaign <= 3
+   IF month == dec AND duration > 117 AND day <= 28 AND campaign <= 5
+   IF duration > 278 AND contact == cellular AND housing == no AND balance > 133 AND loan == no AND day <= 28
+   IF duration > 368 AND balance <= 1131 AND housing == yes AND campaign > 1 AND day <= 28 AND pdays <= -1
+   IF age <= 29 AND housing == no AND duration > 117 AND balance > 276 AND loan == no AND campaign <= 2
+   IF pdays > -1 AND month == jul AND balance > 133 AND day > 10 AND duration > 59 AND campaign <= 4
+   IF month == feb AND duration > 117 AND housing == no AND balance > 23 AND campaign <= 4 AND pdays <= 185
+   IF month == jun AND contact == cellular AND duration > 147 AND age <= 56 AND balance <= 3572 AND age > 29
+   IF poutcome == success AND duration > 89 AND default == no
+   IF pdays > -1 AND month == aug AND duration > 59 AND duration <= 278
+   IF duration > 222 AND housing == no AND campaign <= 1 AND contact == cellular AND loan == no AND day <= 28
+   IF month == apr AND day > 20 AND duration > 59 AND contact == cellular
+   IF month == nov AND day <= 16 AND campaign <= 4 AND duration > 59 AND age > 29 AND campaign <= 2
+   IF duration > 222 AND contact == telephone AND default == no
+
+precision=0.172 recall=0.999 (train)
+   IF month == mar AND duration > 89 AND campaign <= 5
+   IF job == student AND housing == no AND duration > 147 AND day > 5 AND age <= 39 AND loan == no
+   IF month == feb AND day > 10 AND duration > 59 AND default == no
+   IF job == retired AND pdays > -1 AND duration > 117 AND balance > 0 AND campaign <= 3 AND age > 42
+   IF month == feb AND education == tertiary AND duration > 117 AND day > 5 AND campaign <= 2 AND balance > 23
+   IF age > 56 AND contact == telephone AND duration > 147 AND campaign <= 2 AND day <= 18 AND pdays <= -1
+   IF job == unemployed AND housing == no AND duration > 117 AND balance > 0 AND balance <= 1859 AND loan == no
+   IF month == oct AND duration > 89 AND day > 5
+   IF month == sep AND duration > 89 AND campaign <= 3
+   IF duration > 278 AND contact == cellular AND housing == no AND balance > 133 AND loan == no AND day <= 28
+   IF previous > 2 AND housing == no AND duration > 117 AND loan == no AND balance > 0 AND default == no
+   IF duration > 222 AND contact == cellular AND month == may AND day > 16 AND pdays <= 185 AND duration <= 368
+   IF month == jan AND day <= 28 AND duration > 117 AND loan == no AND age > 29 AND age <= 56
+   IF month == feb AND duration > 117 AND housing == no AND balance > 23 AND campaign <= 4 AND pdays <= 185
+   IF month == jun AND contact == cellular AND duration > 147 AND age <= 56 AND balance <= 3572 AND age > 29
+   IF age > 56 AND day > 20 AND balance > 23 AND campaign <= 4 AND duration <= 222 AND previous <= 2
+   IF pdays > -1 AND housing == no AND duration > 89 AND loan == no AND previous <= 2 AND balance > 23
+   IF poutcome == failure AND age <= 39 AND duration > 59 AND day <= 28 AND campaign <= 4 AND contact == cellular
+   IF month == aug AND balance > 705 AND duration > 89 AND loan == no AND contact == cellular AND day > 5
+   IF month == jul AND loan == no AND day <= 28 AND day > 7 AND balance <= 3572 AND default == no
+   IF age <= 34 AND balance > 133 AND balance <= 1131 AND pdays <= -1
+   IF poutcome == success AND duration > 89 AND default == no
+   IF duration > 278 AND contact == cellular AND loan == no AND balance > 23 AND campaign <= 5
+   IF month == apr AND housing == no AND duration > 89
+   IF duration > 368
+   IF pdays > -1 AND month == aug AND duration > 59 AND duration <= 278
+   IF month == apr AND day > 20 AND duration > 59 AND contact == cellular
+   IF month == nov AND day <= 16 AND campaign <= 4 AND duration > 59 AND age > 29 AND campaign <= 2
+   IF age <= 29 AND housing == no AND duration > 117 AND balance > 451 AND loan == no AND marital == single
+   IF month == apr AND day <= 16 AND day > 7 AND loan == no AND duration > 59 AND age > 29
+   IF duration > 222 AND contact == telephone AND default == no
+   IF job == admin. AND marital == single AND day > 5 AND pdays <= 185 AND campaign <= 4 AND duration <= 278
+   IF duration > 179 AND job == management AND housing == no AND balance > 133 AND education == tertiary AND campaign <= 4
+   IF duration > 222 AND contact == cellular AND day <= 10 AND loan == no AND age > 29 AND campaign <= 4
+   IF campaign <= 1 AND day > 20 AND balance > 23 AND balance <= 705 AND day <= 28 AND duration > 59
+   IF month == jun AND contact == cellular AND age <= 51 AND day <= 16 AND duration > 59 AND duration <= 179
+   IF campaign <= 1 AND age > 46 AND balance <= 1131 AND default == no
+   IF duration > 179 AND contact == cellular AND day <= 18 AND balance <= 1131 AND campaign <= 4 AND previous <= 2
+   IF balance > 705 AND campaign <= 3 AND day <= 28 AND pdays <= 185 AND duration <= 278 AND previous <= 2
+

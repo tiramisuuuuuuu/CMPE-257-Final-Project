@@ -1,6 +1,8 @@
 # The paper tests 6 SSF methods, each one may choose different sets from the Pareto front to explore / expand
 
 import numpy as np
+from .pareto import pareto_optimal_np
+
 
 def uniform_sampling(front, k):
     """
@@ -79,24 +81,20 @@ def _hypervolume(points, reference=(0.0, 0.0)):
     if len(points) == 0:
         return 0.0
 
-    # Sort by descending precision
-    points = points[np.argsort(-points[:, 0])]
+    # Sort by ascending recall (~ descending precision)
+    points = points[np.argsort(points[:, 0])]
 
     area = 0.0
-    max_y = ref_y
 
     # Integrate the union of dominated rectangles
     for i, (x, y) in enumerate(points):
-
-        max_y = max(max_y, y)
-
-        next_x = (
-            points[i + 1, 0]
-            if i + 1 < len(points)
-            else ref_x
+        prev_x = (
+            points[i - 1, 0]
+            if i - 1 >= 0
+            else 0
         )
 
-        area += (x - max(next_x, ref_x)) * (max_y - ref_y)
+        area += (x - prev_x) * (y - ref_y)
 
     return area
 
@@ -117,13 +115,13 @@ def hv_ss(front, k):
     if k >= len(front):
         return front["rule_subset"].tolist()
 
-    points = front[["precision", "recall"]].to_numpy()
+    points = front[["recall", "precision"]].to_numpy()
     keys = front["rule_subset"].tolist()
 
     selected = []
     remaining = list(range(len(points)))
 
-    # Reference point for precision and recall maximization
+    # Reference point for recall and precision
     reference = (0.0, 0.0)
 
     # 1. Calculate initial hypervolume
@@ -160,6 +158,219 @@ def hv_ss(front, k):
         current_hv = _hypervolume(
             points[selected],
             reference
+        )
+
+    return [keys[idx] for idx in selected]
+
+
+def hvc_ss(front, previous_front, k=10):
+    """
+    Greedy Hypervolume Contribution (HVC) selection.
+
+    Selects k candidates from the current Pareto front based
+    on their marginal hypervolume contribution relative to
+    the previous PORS iteration's Pareto front.
+
+    Args:
+        front: Current Pareto front DataFrame.
+        previous_front: Previous iteration's Pareto front DataFrame.
+        k: Number of candidates to select.
+
+    Returns:
+        List of selected rule_subset keys.
+    """
+
+    if front.empty or k <= 0:
+        return []
+
+    if previous_front is None or previous_front.empty:
+        return hv_ss(front, k)
+
+    points = front[["recall", "precision"]].to_numpy()
+    previous_points = previous_front[
+        ["recall", "precision"]
+    ].to_numpy()
+
+    keys = front["rule_subset"].tolist()
+
+    selected_indices = []
+    candidate_indices = list(range(len(points)))
+
+    while len(selected_indices) < k:
+        best_idx = None
+        best_hvc = -np.inf
+
+        for idx in candidate_indices:
+            # Calculate the contribution of this candidate
+            # relative to the current reference front.
+            combined = np.vstack([
+                previous_points,
+                points[idx:idx + 1]
+            ])
+
+            contribution = (
+                _hypervolume(combined)
+                - _hypervolume(previous_points)
+            )
+
+            if contribution > best_hvc:
+                best_hvc = contribution
+                best_idx = idx
+
+        if best_idx is None:
+            break
+
+        selected_indices.append(best_idx)
+        candidate_indices.remove(best_idx)
+
+        # Update the reference front with the selected candidate.
+        previous_points = np.vstack([
+            previous_points,
+            points[best_idx]
+        ])
+
+        # Keep only non-dominated solutions.
+        pareto_optimal_np(previous_points)
+
+    return [keys[idx] for idx in selected_indices]
+
+
+def igd(front, k):
+    """
+    Greedy IGD subset selection.
+
+    Selects k solutions that minimize Inverted Generational Distance.
+
+    Returns the selected rule_subset keys.
+    """
+
+    if front.empty or k <= 0:
+        return []
+
+    if k >= len(front):
+        return front["rule_subset"].tolist()
+
+    # Objectives: x = recall, y = precision
+    points = front[["recall", "precision"]].to_numpy()
+    keys = front["rule_subset"].tolist()
+
+    # 1. Calculate Euclidean distances between all pairs
+    distances = np.linalg.norm(
+        points[:, None, :] - points[None, :, :],
+        axis=2
+    )
+
+    # 2. Track minimum distance from each reference point to any selected solution
+    min_distances = np.full(len(points), np.inf)
+
+    selected = []
+    remaining = list(range(len(points)))
+
+    # 3. Greedily select k solutions
+    for _ in range(k):
+
+        best_idx = None
+        best_igd = np.inf
+
+        for idx in remaining:
+
+            # Calculate distances after adding this candidate
+            new_distances = np.minimum(
+                min_distances,
+                distances[:, idx]
+            )
+
+            # Calculate resulting IGD
+            igd = np.mean(new_distances)
+
+            if igd < best_igd:
+                best_igd = igd
+                best_idx = idx
+
+        if best_idx is None:
+            break
+
+        # 4. Add the best candidate
+        selected.append(best_idx)
+        remaining.remove(best_idx)
+
+        # Update minimum distances
+        min_distances = np.minimum(
+            min_distances,
+            distances[:, best_idx]
+        )
+
+    return [keys[idx] for idx in selected]
+
+
+def igd_plus(front, k):
+    """
+    Greedy IGD+ subset selection.
+
+    Selects k solutions that minimize Inverted Generational
+    Distance Plus.
+
+    Assumes precision and recall are maximization objectives.
+
+    Returns the selected rule_subset keys.
+    """
+
+    if front.empty or k <= 0:
+        return []
+
+    if k >= len(front):
+        return front["rule_subset"].tolist()
+
+    # Objectives: x = recall, y = precision
+    points = front[["recall", "precision"]].to_numpy()
+    keys = front["rule_subset"].tolist()
+
+    # 1. Calculate directional IGD+ distances
+    differences = points[:, None, :] - points[None, :, :]
+
+    distances = np.linalg.norm(
+        np.maximum(differences, 0),
+        axis=2
+    )
+
+    # 2. Track minimum IGD+ distance for each reference point
+    min_distances = np.full(len(points), np.inf)
+
+    selected = []
+    remaining = list(range(len(points)))
+
+    # 3. Greedily select k solutions
+    for _ in range(k):
+
+        best_idx = None
+        best_igd_plus = np.inf
+
+        for idx in remaining:
+
+            # Calculate distances after adding this candidate
+            new_distances = np.minimum(
+                min_distances,
+                distances[:, idx]
+            )
+
+            # Calculate resulting IGD+
+            igd_plus = np.mean(new_distances)
+
+            if igd_plus < best_igd_plus:
+                best_igd_plus = igd_plus
+                best_idx = idx
+
+        if best_idx is None:
+            break
+
+        # 4. Add the best candidate
+        selected.append(best_idx)
+        remaining.remove(best_idx)
+
+        # Update minimum distances
+        min_distances = np.minimum(
+            min_distances,
+            distances[:, best_idx]
         )
 
     return [keys[idx] for idx in selected]
