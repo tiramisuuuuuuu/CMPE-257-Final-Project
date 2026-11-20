@@ -1,5 +1,5 @@
 import numpy as np
-from .ssf import uniform_sampling, hv_ss, hvc_ss
+from .ssf import uniform_sampling, hv_ss, hvc_ss, igd, igd_plus
 from .pareto import pareto_optimal
 
 
@@ -19,7 +19,7 @@ def precision_recall(cov, y):
 
 
 def pors(rule_covs, y, max_rounds=50, max_front=200,
-         sampling="hvc_ss", k=10):
+         sampling="igd", k=10):
     """
     Pareto Optimal Rule Subset Search.
 
@@ -73,9 +73,13 @@ def pors(rule_covs, y, max_rounds=50, max_front=200,
             selected_keys = hv_ss(sorted_pareto_front, k)
         elif sampling == "uniform_sampling":
             selected_keys = uniform_sampling(sorted_pareto_front, k)
+        elif sampling == "igd":
+            selected_keys = igd(sorted_pareto_front, k)
+        elif sampling == "igd_plus":
+            selected_keys = igd_plus(sorted_pareto_front, k)
         else:
             raise ValueError(
-                "sampling must be 'hv_ss' or 'uniform_sampling'"
+                "sampling must be 'hv_ss', 'hvc_ss', 'uniform_sampling', 'igd', or 'igd_plus'"
             )
 
         # 4. Expand each selected subset by adding one rule
