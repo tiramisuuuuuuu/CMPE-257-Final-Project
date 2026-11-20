@@ -1,5 +1,6 @@
 from paretoset import paretoset
 import pandas as pd
+import numpy as np
 
 def pareto_optimal(rule_subsets):
     """Keep only Pareto-optimal subsets, modifying rule_subsets in place."""
@@ -42,29 +43,31 @@ def pareto_optimal(rule_subsets):
 
 
 
-def pareto_optimal_df(df):
+def pareto_optimal_np(solutions):
     """
-    Keep only Pareto-optimal solutions, modifying the DataFrame in place.
+    Keep only Pareto-optimal solutions in a NumPy array.
 
-    Expects precision and recall columns, maximizing both.
+    Maximizes precision and recall.
+    Sorts by precision descending, then recall ascending.
+
+    Args:
+        solutions: NumPy array with columns [precision, recall].
+
+    Returns:
+        Filtered NumPy array.
     """
 
-    if df.empty:
-        return df
+    if solutions.size == 0:
+        return solutions
 
     mask = paretoset(
-        df[["precision", "recall"]],
+        solutions[:, :2],
         sense=["max", "max"]
     )
 
-    df.drop(index=df.index[~mask], inplace=True)
+    solutions = solutions[mask]
 
-    df.sort_values(
-        by=["precision", "recall"],
-        ascending=[False, True],
-        inplace=True
-    )
+    order = np.lexsort((solutions[:, 1], -solutions[:, 0]))
+    solutions = solutions[order]
 
-    df.reset_index(drop=True, inplace=True)
-
-    return df
+    return solutions

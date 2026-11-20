@@ -1,7 +1,7 @@
 # The paper tests 6 SSF methods, each one may choose different sets from the Pareto front to explore / expand
 
 import numpy as np
-from .pareto import pareto_optimal_df
+from .pareto import pareto_optimal_np
 
 
 def uniform_sampling(front, k):
@@ -230,7 +230,7 @@ def hvc_ss(front, previous_front, k=10):
         ])
 
         # Keep only non-dominated solutions.
-        pareto_optimal_df(previous_points)
+        pareto_optimal_np(previous_points)
 
     return [keys[idx] for idx in selected_indices]
 

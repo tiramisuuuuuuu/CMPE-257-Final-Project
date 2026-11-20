@@ -1,0 +1,96 @@
+precision=0.126 recall=0.934 (train)
+   IF f3 <= 0.5859 AND f4 > -0.2384 AND f5 <= 2.432 AND f1 <= -0.5822 AND f1 > -2.777 AND f7 > -1.246
+   IF f7 <= 0.02958 AND f8 > -1.411 AND f3 > -0.1796 AND f1 <= 0.9728 AND f0 > -1.266 AND f3 <= 2.428
+   IF f1 > 0.9728 AND f2 > -0.2914 AND f6 <= 1.189 AND f3 <= 2.428 AND f9 > 0.9602
+   IF f3 <= 0.5859 AND f5 <= 0.7229 AND f2 > -1.261 AND f1 > -1.31 AND f6 <= 1.189 AND f8 <= 0.5925
+   IF f3 <= -0.7524 AND f1 > -1.31 AND f2 > -2.537
+   IF f3 <= -0.1796 AND f5 <= 0.9992 AND f1 > -2.777 AND f2 > -2.537 AND f1 > -2.144
+   IF f3 <= 0.2337 AND f8 <= -1.411 AND f1 > -2.777 AND f5 > 0.7229
+   IF f5 <= -0.4309 AND f3 <= 0.8981 AND f9 <= 1.862
+   IF f0 <= 0.264 AND f4 <= 0.2678 AND f8 <= -0.6994 AND f6 <= 0.2259 AND f1 <= 0.9728 AND f5 > -0.4309
+   IF f5 <= 1.576 AND f6 <= 1.189 AND f7 > -0.8237 AND f1 <= 0.9728 AND f3 > 0.2337 AND f7 <= 1.292
+
+precision=0.307 recall=0.885 (train)
+   IF f3 <= 0.2337 AND f7 <= 0.02958 AND f4 <= -0.2384 AND f8 <= 0.06089 AND f6 > -4.397 AND f2 <= 0.6763
+   IF f3 <= 0.5859 AND f4 > -0.2384 AND f5 <= 2.432 AND f1 <= -0.5822 AND f1 > -2.777 AND f7 > -1.246
+   IF f1 > 0.9728 AND f2 > -0.2914 AND f6 <= 1.189 AND f3 <= 2.428 AND f9 > 0.9602
+   IF f3 <= 0.5859 AND f5 <= 0.7229 AND f2 > -1.261 AND f1 > -1.31 AND f6 <= 1.189 AND f8 <= 0.5925
+   IF f3 <= -0.7524 AND f1 > -1.31 AND f2 > -2.537
+   IF f3 <= -0.1796 AND f5 <= 0.9992 AND f1 > -2.777 AND f2 > -2.537 AND f1 > -2.144
+   IF f3 <= 0.2337 AND f8 <= -1.411 AND f1 > -2.777 AND f5 > 0.7229
+   IF f5 <= -0.4309 AND f3 <= 0.8981 AND f9 <= 1.862
+   IF f2 <= -2.537 AND f9 <= 0.01762 AND f5 <= 1.576 AND f8 <= 0.06089 AND f1 <= -0.5822
+   IF f5 <= 0.4202 AND f3 <= 1.907 AND f0 <= -0.23 AND f4 > -0.8327 AND f6 > -1.793 AND f7 <= 0.8596
+
+precision=0.577 recall=0.857 (train)
+   IF f5 <= -0.4309 AND f3 <= 1.186 AND f4 > -0.5177 AND f1 > -0.9349 AND f7 > -0.2326 AND f2 > -2.537
+   IF f3 <= 0.2337 AND f5 <= 0.07603 AND f8 > -1.901 AND f4 > -1.275 AND f1 > -2.777
+   IF f5 <= -0.4309 AND f3 <= 1.186 AND f9 <= 0.01762 AND f8 > 0.06089 AND f7 <= 0.8596 AND f1 <= -0.1828
+   IF f1 > 0.9728 AND f2 > -0.2914 AND f6 <= 1.189 AND f3 <= 2.428 AND f9 > 0.9602
+   IF f3 <= 0.8981 AND f2 > -0.6325 AND f5 <= 1.272 AND f0 > -0.5159 AND f9 > -1.231 AND f4 > -0.8327
+   IF f3 <= -0.7524 AND f1 > -1.31 AND f2 > -2.537
+   IF f3 <= -0.1796 AND f5 <= 0.9992 AND f1 > -2.777 AND f2 > -2.537 AND f1 > -2.144
+   IF f3 <= 0.2337 AND f8 <= -1.411 AND f1 > -2.777 AND f5 > 0.7229
+   IF f2 <= -2.537 AND f9 <= 0.01762 AND f5 <= 1.576 AND f8 <= 0.06089 AND f1 <= -0.5822
+   IF f3 <= 0.5859 AND f5 <= 0.7229 AND f8 <= -0.3429 AND f2 > -1.261 AND f1 > -1.707 AND f9 > -0.2998
+
+precision=0.719 recall=0.826 (train)
+   IF f3 <= -0.1796 AND f8 <= -1.411 AND f5 <= 1.932 AND f5 > 0.9992 AND f2 > -2.537 AND f1 > -2.777
+   IF f3 <= -0.7524 AND f8 <= -1.411 AND f1 > -2.777 AND f5 > 0.9992
+   IF f3 <= 0.2337 AND f5 <= 0.07603 AND f8 > -1.901 AND f4 > -1.275 AND f1 > -2.777
+   IF f5 <= -0.4309 AND f3 <= 1.186 AND f9 <= 0.01762 AND f8 > 0.06089 AND f7 <= 0.8596 AND f1 <= -0.1828
+   IF f1 > 0.9728 AND f2 > -0.2914 AND f6 <= 1.189 AND f3 <= 2.428 AND f9 > 0.9602
+   IF f8 <= -1.901 AND f3 <= 0.8981 AND f1 > -0.9349 AND f2 > -1.994 AND f0 > -0.8236
+   IF f3 <= -0.7524 AND f1 > -1.31 AND f2 > -2.537
+   IF f3 <= -0.1796 AND f5 <= 0.9992 AND f1 > -2.777 AND f2 > -2.537 AND f1 > -2.144
+   IF f2 <= -2.537 AND f9 <= 0.01762 AND f5 <= 1.576 AND f8 <= 0.06089 AND f1 <= -0.5822
+   IF f3 <= 0.5859 AND f5 <= 0.7229 AND f8 <= -0.3429 AND f2 > -1.261 AND f1 > -1.707 AND f9 > -0.2998
+
+precision=0.814 recall=0.791 (train)
+   IF f3 <= -0.1796 AND f8 <= -1.411 AND f5 <= 1.932 AND f5 > 0.9992 AND f2 > -2.537 AND f1 > -2.777
+   IF f5 <= -0.4309 AND f3 <= 1.186 AND f9 <= 0.01762 AND f8 > 0.06089 AND f1 > -2.777 AND f7 <= 0.8596
+   IF f3 <= 0.2337 AND f5 <= 0.9992 AND f8 <= -0.3429 AND f2 > -1.261 AND f1 > -1.707 AND f0 <= 1.304
+   IF f3 <= -0.7524 AND f8 <= -1.411 AND f1 > -2.777 AND f5 > 0.9992
+   IF f3 <= -0.1796 AND f5 <= 0.4202 AND f6 > -2.437 AND f1 > -2.777 AND f2 > -2.537
+   IF f3 <= -0.7524 AND f5 <= 1.272 AND f8 <= 0.06089 AND f1 > -2.777 AND f8 > -1.411
+   IF f3 <= 0.2337 AND f5 <= 0.07603 AND f8 > -1.901 AND f4 > -1.275 AND f1 > -2.777
+   IF f1 > 0.9728 AND f2 > -0.2914 AND f6 <= 0.2259
+   IF f3 <= -0.7524 AND f1 > -1.31 AND f2 > -1.261
+   IF f2 <= -2.537 AND f9 <= 0.01762 AND f5 <= 1.576 AND f8 <= 0.06089 AND f1 <= -0.5822
+
+precision=0.869 recall=0.760 (train)
+   IF f3 <= -0.1796 AND f5 <= 0.9992 AND f8 <= -0.3429 AND f8 > -1.056 AND f1 > -1.707 AND f5 <= 0.7229
+   IF f2 <= -2.537 AND f1 <= -1.31 AND f5 <= 0.07603
+   IF f5 <= -0.4309 AND f3 <= 1.186 AND f9 <= 0.01762 AND f8 > 0.06089 AND f1 > -2.777 AND f7 <= 0.8596
+   IF f3 <= -0.7524 AND f8 <= -1.411 AND f1 > -2.777 AND f5 > 0.9992
+   IF f3 <= -0.1796 AND f5 <= 0.4202 AND f6 > -2.437 AND f1 > -2.777 AND f2 > -2.537
+   IF f3 <= -0.7524 AND f5 <= 1.272 AND f8 <= 0.06089 AND f1 > -2.777 AND f8 > -1.411
+   IF f3 <= -0.1796 AND f8 <= -1.411 AND f5 <= 1.932 AND f2 > -1.59 AND f1 > -2.777 AND f5 > -0.4309
+   IF f1 > 0.9728 AND f2 > -0.2914 AND f6 <= 0.2259
+   IF f3 <= 0.2337 AND f5 <= 0.9992 AND f8 <= -0.6994 AND f2 > -1.261 AND f1 > -1.707 AND f0 <= 1.304
+   IF f3 <= -0.7524 AND f1 > -1.31 AND f2 > -1.261
+
+precision=0.913 recall=0.724 (train)
+   IF f3 <= -0.7524 AND f8 <= -1.411 AND f1 > -2.144 AND f1 <= -1.31 AND f5 > 0.9992
+   IF f5 <= -0.4309 AND f3 <= 0.8981 AND f9 <= -0.2998 AND f8 > 0.06089 AND f1 > -2.777 AND f7 <= 0.8596
+   IF f3 <= -0.1796 AND f8 <= -1.411 AND f5 <= 1.932 AND f5 > 0.9992 AND f2 > -2.537 AND f1 > -2.777
+   IF f3 <= -0.7524 AND f8 <= -1.901 AND f2 > -2.537 AND f1 > -2.777 AND f5 > 1.272
+   IF f2 <= -2.537 AND f1 <= -1.31 AND f5 <= 0.07603
+   IF f3 <= -0.7524 AND f5 <= 1.272 AND f8 <= -0.3429 AND f8 > -1.411 AND f1 > -2.777 AND f4 <= 1.265
+   IF f3 <= -0.1796 AND f5 <= 0.4202 AND f6 > -2.437 AND f1 > -2.777 AND f2 > -2.537
+   IF f1 > 0.9728 AND f2 > -0.2914 AND f6 <= 0.2259
+   IF f3 <= 0.2337 AND f5 <= 0.9992 AND f8 <= -0.6994 AND f2 > -1.261 AND f1 > -1.707 AND f0 <= 1.304
+   IF f3 <= -0.7524 AND f1 > -1.31 AND f2 > -1.261
+
+precision=0.964 recall=0.680 (train)
+   IF f3 <= -0.7524 AND f1 > -1.31 AND f8 <= -0.3429 AND f9 <= 0.01762 AND f0 > -1.266
+   IF f5 <= -0.4309 AND f3 <= 0.8981 AND f9 <= -0.2998 AND f8 > 0.06089 AND f1 > -2.777 AND f7 <= 0.8596
+   IF f3 <= -0.7524 AND f5 <= 0.7229 AND f8 > -1.056 AND f8 <= 0.5925 AND f1 > -2.777 AND f1 <= -0.9349
+   IF f3 <= -0.1796 AND f5 <= 0.07603 AND f2 > -1.59 AND f1 > -2.144 AND f8 <= 1.291 AND f0 > -1.266
+   IF f3 <= -0.7524 AND f8 <= -1.901 AND f5 > 1.932 AND f1 > -2.777 AND f9 <= 1.337
+   IF f2 <= -2.537 AND f1 <= -2.144 AND f5 <= 1.576 AND f8 > -1.901 AND f7 <= 1.292
+   IF f3 <= -0.7524 AND f1 > -0.5822 AND f2 > -1.59
+   IF f3 <= -0.1796 AND f8 <= -1.411 AND f5 <= 1.932 AND f2 > -1.59 AND f1 > -2.777 AND f5 > -0.4309
+   IF f1 > 0.9728 AND f2 > -0.2914 AND f6 <= 0.2259
+   IF f3 <= 0.2337 AND f5 <= 0.9992 AND f8 <= -0.6994 AND f2 > -1.261 AND f1 > -1.707 AND f0 <= 1.304
+
