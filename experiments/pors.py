@@ -19,7 +19,7 @@ def precision_recall(cov, y):
 
 
 def pors(rule_covs, y, max_rounds=50, max_front=200,
-         sampling="igd", k=10):
+         sampling="hvc_ss", k=10):
     """
     Pareto Optimal Rule Subset Search.
 

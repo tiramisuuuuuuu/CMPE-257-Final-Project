@@ -1,0 +1,302 @@
+precision=1.000 recall=0.007 (train)
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberRealEstateLoansOrLines > 0 AND age <= 44 AND DebtRatio > 0.2142
+   IF NumberOfTime60-89DaysPastDueNotWorse == 4 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberOfOpenCreditLinesAndLoans <= 10 AND DebtRatio > 0.1346
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse <= 1 AND NumberRealEstateLoansOrLines <= 2
+
+precision=0.689 recall=0.198 (train)
+   IF NumberOfTime60-89DaysPastDueNotWorse == 5 AND DebtRatio > 0.6486
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND NumberOfOpenCreditLinesAndLoans <= 4 AND NumberOfDependents > 0 AND DebtRatio > 0.2879
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND NumberOfTimes90DaysLate > 0 AND MonthlyIncome > 4546 AND NumberRealEstateLoansOrLines <= 0 AND NumberOfOpenCreditLinesAndLoans > 4 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND DebtRatio <= 0.2142 AND age > 44 AND NumberOfDependents <= 2 AND MonthlyIncome <= 1.167e+04
+   IF NumberOfTime60-89DaysPastDueNotWorse == 98 AND NumberOfDependents > 0 AND age <= 44 AND MonthlyIncome > 2008
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND NumberOfTime30-59DaysPastDueNotWorse <= 1 AND DebtRatio > 4
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND age <= 33 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfDependents <= 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND RevolvingUtilizationOfUnsecuredLines > 0.154
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines <= 0.002906 AND MonthlyIncome > 5400 AND age > 33
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND age <= 33 AND DebtRatio <= 0.03174 AND RevolvingUtilizationOfUnsecuredLines > 0.154 AND NumberOfOpenCreditLinesAndLoans <= 3
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND age <= 39 AND NumberOfTime60-89DaysPastDueNotWorse == 0 AND MonthlyIncome is missing AND RevolvingUtilizationOfUnsecuredLines <= 0.9806
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND MonthlyIncome <= 3800 AND NumberOfOpenCreditLinesAndLoans > 10 AND age > 52 AND MonthlyIncome > 2008
+   IF NumberOfTime60-89DaysPastDueNotWorse == 98 AND DebtRatio > 0.03174 AND age <= 44
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberOfOpenCreditLinesAndLoans > 4 AND age > 48
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND NumberOfOpenCreditLinesAndLoans <= 4 AND NumberOfOpenCreditLinesAndLoans > 3
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND age > 48 AND NumberOfOpenCreditLinesAndLoans > 10 AND age <= 60 AND DebtRatio > 0.2142
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfOpenCreditLinesAndLoans > 15 AND DebtRatio <= 0.6486 AND NumberOfDependents <= 1 AND age <= 72
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND MonthlyIncome <= 6300 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime60-89DaysPastDueNotWorse == 0 AND DebtRatio > 0.1346
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND MonthlyIncome <= 4546 AND NumberOfDependents > 0 AND NumberOfDependents <= 1 AND age <= 33
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio > 0.6486 AND NumberOfDependents > 2 AND NumberOfTime60-89DaysPastDueNotWorse == 0 AND RevolvingUtilizationOfUnsecuredLines > 0.4434
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND MonthlyIncome <= 4546 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberOfDependents > 0
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND MonthlyIncome <= 7500 AND DebtRatio > 0.6486 AND NumberOfOpenCreditLinesAndLoans <= 8 AND MonthlyIncome > 2008
+   IF NumberOfTime60-89DaysPastDueNotWorse == 98 AND age > 52 AND NumberOfDependents <= 2
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 39 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans > 3
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome > 3000 AND MonthlyIncome <= 3800 AND age > 39
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND age <= 44 AND NumberOfTime60-89DaysPastDueNotWorse == 0 AND NumberOfOpenCreditLinesAndLoans <= 5 AND MonthlyIncome > 3800
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND DebtRatio > 0.6486 AND MonthlyIncome > 3000 AND MonthlyIncome <= 1.167e+04
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND MonthlyIncome <= 3800 AND NumberOfDependents > 1 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans <= 10
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 8 AND NumberOfTime60-89DaysPastDueNotWorse == 0 AND MonthlyIncome > 2008 AND DebtRatio > 0.1346
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND DebtRatio > 0.6486 AND NumberOfOpenCreditLinesAndLoans <= 4 AND age <= 52 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND MonthlyIncome <= 3800 AND NumberOfOpenCreditLinesAndLoans > 10 AND NumberRealEstateLoansOrLines > 0 AND DebtRatio <= 1255
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfOpenCreditLinesAndLoans > 12 AND age <= 56 AND NumberOfDependents <= 2 AND RevolvingUtilizationOfUnsecuredLines > 0.2707
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfDependents > 1 AND MonthlyIncome <= 4546 AND age > 39 AND NumberRealEstateLoansOrLines <= 0
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND MonthlyIncome > 6300 AND MonthlyIncome <= 9075 AND NumberOfDependents <= 1 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines <= 2
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND DebtRatio > 1255 AND age <= 48 AND NumberRealEstateLoansOrLines <= 1
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 33 AND NumberOfDependents > 1 AND MonthlyIncome <= 2008 AND DebtRatio > 0.03174
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfOpenCreditLinesAndLoans <= 4 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND NumberOfTime30-59DaysPastDueNotWorse > 0
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 56 AND DebtRatio > 0.3669 AND DebtRatio <= 0.4666 AND MonthlyIncome <= 6300
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND DebtRatio > 0.2879 AND NumberOfDependents > 0 AND DebtRatio <= 0.4666 AND age <= 56 AND NumberRealEstateLoansOrLines <= 2
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfDependents > 2 AND NumberRealEstateLoansOrLines > 0 AND MonthlyIncome > 5400 AND DebtRatio <= 0.4666
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.4666 AND age > 39 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND MonthlyIncome > 3000 AND MonthlyIncome <= 6300 AND age <= 52 AND NumberOfOpenCreditLinesAndLoans <= 9 AND DebtRatio > 0.1346
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND MonthlyIncome <= 6300 AND NumberOfOpenCreditLinesAndLoans <= 8 AND NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND DebtRatio > 0.03174
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND DebtRatio > 0.2879
+   IF NumberOfTime60-89DaysPastDueNotWorse == 4 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND NumberOfOpenCreditLinesAndLoans <= 15 AND age <= 60 AND DebtRatio > 0.2142
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND NumberOfTimes90DaysLate > 0 AND MonthlyIncome > 3000 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans <= 10 AND age > 33
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfDependents > 2 AND NumberOfOpenCreditLinesAndLoans <= 5 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND MonthlyIncome > 3000 AND MonthlyIncome <= 9075
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 6 AND NumberOfDependents <= 1 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines <= 2
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfDependents is missing AND NumberOfOpenCreditLinesAndLoans <= 3 AND DebtRatio > 4
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND DebtRatio > 0.6486 AND NumberOfOpenCreditLinesAndLoans > 10 AND DebtRatio <= 1255 AND age <= 56
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberRealEstateLoansOrLines > 0
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 3 AND DebtRatio > 0.1346 AND age <= 72
+
+precision=0.466 recall=0.436 (train)
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfDependents > 2 AND NumberOfOpenCreditLinesAndLoans <= 5 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND MonthlyIncome > 3000 AND MonthlyIncome <= 9075
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967 AND DebtRatio > 0.1346 AND age <= 65
+   IF NumberOfTimes90DaysLate > 0 AND age <= 33 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberOfDependents > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND DebtRatio <= 0.4666
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 6 AND NumberOfDependents <= 1 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines <= 2
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND MonthlyIncome > 3800 AND MonthlyIncome <= 7500 AND NumberOfOpenCreditLinesAndLoans <= 12 AND DebtRatio > 0.03174
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND MonthlyIncome <= 5400 AND NumberOfOpenCreditLinesAndLoans > 5 AND DebtRatio <= 0.4666 AND age <= 56
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND DebtRatio > 0.6486 AND NumberRealEstateLoansOrLines <= 1 AND NumberOfOpenCreditLinesAndLoans > 4 AND NumberOfDependents <= 2
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfDependents is missing AND NumberOfOpenCreditLinesAndLoans <= 3 AND DebtRatio > 4
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfDependents > 1 AND MonthlyIncome <= 6300 AND MonthlyIncome > 4546 AND DebtRatio > 0.3669
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfOpenCreditLinesAndLoans <= 3 AND age <= 56 AND DebtRatio > 0.1346 AND age <= 52 AND RevolvingUtilizationOfUnsecuredLines > 0.01917
+   IF NumberOfTime60-89DaysPastDueNotWorse == 4 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND DebtRatio > 0.2142 AND RevolvingUtilizationOfUnsecuredLines > 0.2707
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberOfOpenCreditLinesAndLoans > 10 AND DebtRatio > 0.4666 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberRealEstateLoansOrLines <= 2
+   IF NumberOfTimes90DaysLate > 0 AND NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.4666 AND DebtRatio <= 4 AND age > 33 AND RevolvingUtilizationOfUnsecuredLines > 0.002906
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND MonthlyIncome <= 3800 AND NumberOfDependents <= 0 AND DebtRatio > 0.2142 AND MonthlyIncome > 2008
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 3 AND age <= 44 AND MonthlyIncome > 2008 AND MonthlyIncome <= 7500
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 12 AND MonthlyIncome <= 6300 AND MonthlyIncome > 2008 AND age <= 60
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND RevolvingUtilizationOfUnsecuredLines <= 0.4434 AND NumberOfDependents <= 0 AND age <= 60 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND MonthlyIncome <= 1.167e+04 AND DebtRatio > 0.2142 AND DebtRatio <= 0.4666 AND NumberOfOpenCreditLinesAndLoans <= 12
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 9075 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberOfOpenCreditLinesAndLoans > 3 AND DebtRatio <= 0.6486
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans <= 6 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND DebtRatio > 0.2142 AND age <= 65
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 2008 AND DebtRatio <= 4 AND NumberOfOpenCreditLinesAndLoans <= 9 AND NumberOfTimes90DaysLate <= 0
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfOpenCreditLinesAndLoans > 10 AND MonthlyIncome <= 5400 AND DebtRatio > 0.3669 AND NumberRealEstateLoansOrLines > 0 AND age > 39
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberRealEstateLoansOrLines > 2 AND MonthlyIncome > 5400 AND NumberOfOpenCreditLinesAndLoans > 12 AND age <= 60
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfOpenCreditLinesAndLoans > 10 AND MonthlyIncome <= 4546 AND NumberOfOpenCreditLinesAndLoans <= 15 AND age > 33
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND NumberOfOpenCreditLinesAndLoans <= 9 AND DebtRatio > 0.2879 AND age <= 56
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND age <= 65 AND DebtRatio > 0.03174
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 56 AND NumberOfTimes90DaysLate <= 0
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND DebtRatio > 0.3669 AND age <= 52 AND NumberOfOpenCreditLinesAndLoans <= 6
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND DebtRatio > 0.1346
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND DebtRatio > 0.1346 AND DebtRatio <= 1255 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND NumberRealEstateLoansOrLines <= 2
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio <= 1255 AND age <= 72 AND RevolvingUtilizationOfUnsecuredLines > 0.01917
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome > 2008 AND NumberOfOpenCreditLinesAndLoans <= 15 AND age <= 72
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND DebtRatio > 0.6486 AND age <= 52
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND age <= 33 AND NumberOfOpenCreditLinesAndLoans <= 6 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967 AND DebtRatio <= 0.4666
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 33 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans <= 9 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 39 AND NumberOfOpenCreditLinesAndLoans > 3 AND NumberOfOpenCreditLinesAndLoans <= 6 AND NumberOfDependents <= 1
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.6967
+
+precision=0.402 recall=0.518 (train)
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfDependents > 2 AND NumberOfOpenCreditLinesAndLoans <= 5 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND MonthlyIncome > 3000 AND MonthlyIncome <= 9075
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 56 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans <= 6 AND age <= 44
+   IF NumberOfTime60-89DaysPastDueNotWorse == 4 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND DebtRatio > 0.2142 AND RevolvingUtilizationOfUnsecuredLines > 0.2707
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome > 2008 AND NumberOfOpenCreditLinesAndLoans <= 15 AND NumberOfDependents <= 2
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND DebtRatio > 0.4666 AND age <= 52
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 9075 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberOfOpenCreditLinesAndLoans > 3 AND DebtRatio <= 0.6486
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberRealEstateLoansOrLines > 2 AND MonthlyIncome > 5400 AND NumberOfOpenCreditLinesAndLoans > 12 AND age <= 60
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND age <= 48 AND NumberOfTime30-59DaysPastDueNotWorse <= 0 AND NumberRealEstateLoansOrLines <= 1
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND age <= 65 AND DebtRatio > 0.03174
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 56 AND NumberOfTimes90DaysLate <= 0
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND DebtRatio > 0.1346
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND DebtRatio > 0.1346 AND DebtRatio <= 1255 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND NumberRealEstateLoansOrLines <= 2
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 5400 AND NumberOfOpenCreditLinesAndLoans > 3 AND DebtRatio <= 4 AND age <= 56
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfDependents <= 2 AND NumberOfOpenCreditLinesAndLoans <= 12 AND MonthlyIncome <= 1.167e+04 AND age <= 60
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberOfOpenCreditLinesAndLoans > 8 AND age > 39 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967 AND DebtRatio <= 4
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans > 5 AND age <= 60 AND DebtRatio > 0.3669
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfDependents > 1 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome <= 1.167e+04 AND MonthlyIncome > 3000
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND MonthlyIncome <= 5400 AND NumberOfDependents > 0 AND age <= 52 AND DebtRatio <= 0.6486
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio > 0.4666 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND NumberOfOpenCreditLinesAndLoans > 12 AND age <= 48
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines > 1 AND MonthlyIncome <= 7500 AND MonthlyIncome > 3000 AND NumberOfOpenCreditLinesAndLoans > 5
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.08275 AND RevolvingUtilizationOfUnsecuredLines > 0.01917 AND DebtRatio > 0.2879 AND DebtRatio <= 4 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND age <= 33 AND NumberOfOpenCreditLinesAndLoans <= 6 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967 AND DebtRatio <= 0.4666
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 33 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans <= 9 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfOpenCreditLinesAndLoans <= 6 AND NumberOfOpenCreditLinesAndLoans > 4 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio > 0.03174 AND MonthlyIncome <= 6300
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 39 AND NumberOfOpenCreditLinesAndLoans > 3 AND NumberOfOpenCreditLinesAndLoans <= 6 AND NumberOfDependents <= 1
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND age <= 72
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines <= 1 AND age <= 56 AND DebtRatio > 0.03174 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 8 AND age <= 39 AND MonthlyIncome <= 7500 AND NumberOfTime30-59DaysPastDueNotWorse <= 0 AND DebtRatio > 0.03174
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.6486 AND age <= 60 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 15 AND age <= 56 AND DebtRatio > 0.6486 AND DebtRatio <= 4 AND age > 33
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.2707
+
+precision=0.350 recall=0.588 (train)
+   IF NumberOfTime60-89DaysPastDueNotWorse == 5 AND DebtRatio > 0.6486
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 56 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans <= 6 AND age <= 44
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome > 2008 AND NumberOfOpenCreditLinesAndLoans <= 15 AND NumberOfDependents <= 2
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND MonthlyIncome is missing AND NumberRealEstateLoansOrLines <= 0 AND NumberOfTime60-89DaysPastDueNotWorse == 0 AND DebtRatio > 0.03174 AND DebtRatio <= 1255
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND age <= 65 AND DebtRatio > 0.03174
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime60-89DaysPastDueNotWorse == 1 AND DebtRatio > 0.1346
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberOfOpenCreditLinesAndLoans > 8 AND age > 39 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967 AND DebtRatio <= 4
+   IF NumberOfTimes90DaysLate > 0 AND age <= 48 AND NumberOfOpenCreditLinesAndLoans <= 6 AND age > 33 AND DebtRatio > 0.03174 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND MonthlyIncome <= 5400 AND NumberOfDependents > 0 AND age <= 52 AND DebtRatio <= 0.6486
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfDependents > 0 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio <= 1255
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio > 0.4666 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND NumberOfOpenCreditLinesAndLoans > 12 AND age <= 48
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND age <= 33 AND NumberOfOpenCreditLinesAndLoans <= 6 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967 AND DebtRatio <= 0.4666
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio > 0.6486 AND NumberRealEstateLoansOrLines > 2 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND age <= 72 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 9075 AND age > 60 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberRealEstateLoansOrLines <= 0 AND RevolvingUtilizationOfUnsecuredLines > 0.08275 AND NumberOfDependents <= 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967 AND DebtRatio > 0.1346
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberRealEstateLoansOrLines <= 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707 AND age > 44 AND DebtRatio > 0.03174 AND age <= 72
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND age <= 39 AND age > 33 AND NumberOfOpenCreditLinesAndLoans > 3 AND RevolvingUtilizationOfUnsecuredLines > 0.154 AND MonthlyIncome > 6300
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND DebtRatio <= 0.1346 AND MonthlyIncome > 3000 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND NumberOfOpenCreditLinesAndLoans <= 15 AND age > 48
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfOpenCreditLinesAndLoans <= 6 AND NumberOfOpenCreditLinesAndLoans > 4 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio > 0.03174 AND MonthlyIncome <= 6300
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 39 AND NumberOfOpenCreditLinesAndLoans > 3 AND NumberOfOpenCreditLinesAndLoans <= 6 AND NumberOfDependents <= 1
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND age <= 72
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND DebtRatio > 0.4666 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND MonthlyIncome <= 9075 AND DebtRatio <= 4
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines <= 1 AND age <= 56 AND DebtRatio > 0.03174 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 44 AND NumberOfDependents > 0 AND MonthlyIncome > 2008
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 12 AND age <= 48 AND DebtRatio > 0.4666 AND NumberOfTime30-59DaysPastDueNotWorse <= 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 8 AND age <= 39 AND MonthlyIncome <= 7500 AND NumberOfTime30-59DaysPastDueNotWorse <= 0 AND DebtRatio > 0.03174
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND DebtRatio > 0.6486 AND MonthlyIncome > 5400 AND age <= 60 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.6486 AND age <= 60 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 15 AND age <= 56 AND DebtRatio > 0.6486 AND DebtRatio <= 4 AND age > 33
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 10 AND age <= 39 AND MonthlyIncome <= 4546 AND DebtRatio > 0.1346 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 3 AND age <= 60
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.01917
+
+precision=0.282 recall=0.686 (train)
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio > 0.6486 AND NumberRealEstateLoansOrLines > 2 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND age <= 72 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberRealEstateLoansOrLines <= 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707 AND age > 44 AND DebtRatio > 0.03174 AND age <= 72
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND age <= 39 AND age > 33 AND NumberOfOpenCreditLinesAndLoans > 3 AND RevolvingUtilizationOfUnsecuredLines > 0.154 AND MonthlyIncome > 6300
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberOfOpenCreditLinesAndLoans <= 6 AND NumberOfOpenCreditLinesAndLoans > 4 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio > 0.03174 AND MonthlyIncome <= 6300
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio > 0.4666 AND NumberOfOpenCreditLinesAndLoans > 8 AND NumberOfDependents <= 0 AND NumberRealEstateLoansOrLines > 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 12 AND age <= 48 AND DebtRatio > 0.4666 AND NumberOfTime30-59DaysPastDueNotWorse <= 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND NumberOfOpenCreditLinesAndLoans > 8 AND age <= 39 AND MonthlyIncome <= 7500 AND NumberOfTime30-59DaysPastDueNotWorse <= 0 AND DebtRatio > 0.03174
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 10 AND MonthlyIncome <= 6300 AND age <= 60 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND NumberRealEstateLoansOrLines <= 2
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND age <= 52 AND DebtRatio <= 0.03174 AND MonthlyIncome > 2008 AND MonthlyIncome <= 4546 AND NumberOfOpenCreditLinesAndLoans <= 5
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND DebtRatio > 0.6486 AND MonthlyIncome > 5400 AND age <= 60 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND age <= 52 AND NumberRealEstateLoansOrLines <= 0 AND age > 33 AND NumberOfOpenCreditLinesAndLoans <= 8 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 3000 AND NumberOfDependents > 0 AND DebtRatio <= 0.2879 AND NumberOfTime30-59DaysPastDueNotWorse <= 0 AND age <= 48
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome <= 3800 AND age > 39 AND DebtRatio <= 4 AND DebtRatio > 0.1346
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.6486 AND age <= 60 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 39 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome > 4546 AND DebtRatio > 0.03174 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND age <= 52 AND NumberOfOpenCreditLinesAndLoans > 9 AND DebtRatio > 0.3669 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 2008 AND NumberOfOpenCreditLinesAndLoans > 4 AND age <= 52 AND NumberRealEstateLoansOrLines <= 1 AND NumberOfOpenCreditLinesAndLoans <= 9
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND NumberRealEstateLoansOrLines <= 0 AND MonthlyIncome is missing AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND NumberOfOpenCreditLinesAndLoans <= 12
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 15 AND age <= 56 AND DebtRatio > 0.6486 AND DebtRatio <= 4 AND age > 33
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 10 AND age <= 39 AND MonthlyIncome <= 4546 AND DebtRatio > 0.1346 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 3 AND age <= 60
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1
+   IF NumberOfTimes90DaysLate > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.01917
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfTime30-59DaysPastDueNotWorse > 0 AND age <= 72
+   IF NumberOfTimes90DaysLate > 0 AND NumberOfOpenCreditLinesAndLoans <= 15 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+
+precision=0.230 recall=0.764 (train)
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND age <= 65 AND DebtRatio > 0.03174
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio > 0.6486 AND NumberRealEstateLoansOrLines > 2 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND age <= 72 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberRealEstateLoansOrLines <= 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707 AND age > 44 AND DebtRatio > 0.03174 AND age <= 72
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND age <= 39 AND age > 33 AND NumberOfOpenCreditLinesAndLoans > 3 AND RevolvingUtilizationOfUnsecuredLines > 0.154 AND MonthlyIncome > 6300
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans > 4 AND DebtRatio <= 1255
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1 AND DebtRatio > 0.4666 AND NumberOfOpenCreditLinesAndLoans > 8 AND NumberOfDependents <= 0 AND NumberRealEstateLoansOrLines > 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND age <= 52 AND DebtRatio <= 0.03174 AND MonthlyIncome > 2008 AND MonthlyIncome <= 4546 AND NumberOfOpenCreditLinesAndLoans <= 5
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND DebtRatio > 0.6486 AND MonthlyIncome > 5400 AND age <= 60 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND age <= 52 AND NumberRealEstateLoansOrLines <= 0 AND age > 33 AND NumberOfOpenCreditLinesAndLoans <= 8 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 33 AND MonthlyIncome is missing AND NumberOfDependents <= 2
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 3000 AND NumberOfDependents > 0 AND DebtRatio <= 0.2879 AND NumberOfTime30-59DaysPastDueNotWorse <= 0 AND age <= 48
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome <= 3800 AND age > 39 AND DebtRatio <= 4 AND DebtRatio > 0.1346
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.6486 AND age <= 60 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 33 AND DebtRatio <= 0.1346 AND MonthlyIncome <= 4546 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 56 AND DebtRatio > 0.4666 AND MonthlyIncome > 4546 AND NumberRealEstateLoansOrLines <= 2 AND NumberOfDependents > 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 2008 AND NumberOfOpenCreditLinesAndLoans > 4 AND age <= 52 AND NumberRealEstateLoansOrLines <= 1 AND NumberOfOpenCreditLinesAndLoans <= 9
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio > 4 AND age <= 65 AND DebtRatio <= 1255 AND MonthlyIncome is missing
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 4546 AND age <= 60 AND DebtRatio <= 0.3669 AND NumberOfDependents > 0 AND age > 33
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 15 AND age <= 56 AND DebtRatio > 0.6486 AND DebtRatio <= 4 AND age > 33
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 10 AND age <= 56 AND DebtRatio > 0.4666 AND NumberRealEstateLoansOrLines > 0 AND NumberOfDependents <= 2
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 33 AND RevolvingUtilizationOfUnsecuredLines > 0.9806 AND DebtRatio <= 0.2879 AND DebtRatio > 0.03174 AND MonthlyIncome <= 3000
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 10 AND age <= 39 AND MonthlyIncome <= 4546 AND DebtRatio > 0.1346 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF NumberOfTimes90DaysLate > 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND age <= 48 AND DebtRatio > 0.03174 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome <= 9075 AND age > 48 AND NumberOfDependents <= 2 AND DebtRatio <= 1255
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND age <= 48 AND NumberOfOpenCreditLinesAndLoans > 10 AND DebtRatio > 0.4666 AND DebtRatio <= 1255 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF NumberRealEstateLoansOrLines > 2 AND age <= 39 AND RevolvingUtilizationOfUnsecuredLines > 0.08275 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans > 4
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.154 AND NumberOfDependents <= 0 AND NumberRealEstateLoansOrLines <= 1 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF age <= 33 AND NumberOfOpenCreditLinesAndLoans > 12 AND DebtRatio > 0.2879 AND RevolvingUtilizationOfUnsecuredLines > 0.01917 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707 AND NumberOfTime30-59DaysPastDueNotWorse <= 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.2707 AND age <= 33 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberOfDependents > 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.2707
+
+precision=0.194 recall=0.825 (train)
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND age <= 65 AND DebtRatio > 0.03174
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome <= 3800 AND age > 39 AND DebtRatio <= 4 AND DebtRatio > 0.1346
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio > 4 AND age <= 65 AND DebtRatio <= 1255 AND MonthlyIncome is missing
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 10 AND age <= 56 AND DebtRatio > 0.4666 AND NumberRealEstateLoansOrLines > 0 AND NumberOfDependents <= 2
+   IF NumberOfTimes90DaysLate > 0
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND age <= 48 AND DebtRatio > 0.03174 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND age <= 52 AND NumberRealEstateLoansOrLines <= 0 AND NumberOfOpenCreditLinesAndLoans <= 8
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.4666 AND NumberOfOpenCreditLinesAndLoans > 6 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 15 AND age <= 56 AND DebtRatio > 0.6486 AND NumberOfTime30-59DaysPastDueNotWorse <= 0 AND age > 33
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND age <= 48 AND NumberOfOpenCreditLinesAndLoans > 10 AND DebtRatio > 0.4666 AND DebtRatio <= 1255 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND MonthlyIncome <= 7500 AND NumberOfDependents > 0 AND DebtRatio > 0.03174 AND age <= 60 AND DebtRatio <= 1255
+   IF NumberRealEstateLoansOrLines > 2 AND age <= 39 AND RevolvingUtilizationOfUnsecuredLines > 0.08275 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans > 4
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.154 AND NumberOfDependents <= 0 AND NumberRealEstateLoansOrLines <= 1 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.6486 AND MonthlyIncome > 2008 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND age > 44 AND DebtRatio <= 4
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans > 10 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.154 AND DebtRatio <= 1255
+   IF RevolvingUtilizationOfUnsecuredLines > 0.2707 AND age <= 52 AND NumberOfOpenCreditLinesAndLoans > 8 AND NumberOfDependents <= 1 AND MonthlyIncome <= 6300 AND NumberRealEstateLoansOrLines <= 1
+   IF age <= 33 AND NumberOfOpenCreditLinesAndLoans > 12 AND DebtRatio > 0.2879 AND RevolvingUtilizationOfUnsecuredLines > 0.01917 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707 AND NumberOfTime30-59DaysPastDueNotWorse <= 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.2707 AND age <= 33 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberOfDependents > 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.2707
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND DebtRatio <= 1255 AND age <= 60 AND NumberRealEstateLoansOrLines <= 2
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND DebtRatio > 0.6486 AND DebtRatio <= 4 AND age <= 56 AND NumberRealEstateLoansOrLines > 0 AND NumberOfOpenCreditLinesAndLoans > 3
+   IF NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.6486 AND MonthlyIncome > 2008 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND NumberOfOpenCreditLinesAndLoans > 9
+   IF RevolvingUtilizationOfUnsecuredLines > 0.154 AND age <= 39 AND NumberOfOpenCreditLinesAndLoans > 8 AND age > 33 AND MonthlyIncome <= 7500 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707
+
+precision=0.164 recall=0.873 (train)
+   IF NumberOfTime60-89DaysPastDueNotWorse == 3 AND age <= 65 AND DebtRatio > 0.03174
+   IF NumberOfTime60-89DaysPastDueNotWorse == 2 AND NumberOfTime30-59DaysPastDueNotWorse <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND DebtRatio > 0.6486 AND MonthlyIncome > 5400 AND age <= 60 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 33 AND MonthlyIncome is missing AND NumberOfDependents <= 2
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND MonthlyIncome <= 3800 AND age > 39 AND DebtRatio <= 4 AND DebtRatio > 0.1346
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 2008 AND NumberOfOpenCreditLinesAndLoans > 4 AND age <= 52 AND NumberRealEstateLoansOrLines <= 1 AND NumberOfOpenCreditLinesAndLoans <= 9
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberRealEstateLoansOrLines <= 0 AND DebtRatio > 4 AND age <= 65 AND DebtRatio <= 1255 AND MonthlyIncome is missing
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND MonthlyIncome <= 4546 AND age <= 60 AND DebtRatio <= 0.3669 AND NumberOfDependents > 0 AND age > 33
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 10 AND age <= 56 AND DebtRatio > 0.4666 AND NumberRealEstateLoansOrLines > 0 AND NumberOfDependents <= 2
+   IF NumberOfTimes90DaysLate > 0
+   IF NumberOfTime30-59DaysPastDueNotWorse > 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND NumberOfOpenCreditLinesAndLoans > 8 AND age <= 48 AND DebtRatio > 0.03174 AND NumberOfTime60-89DaysPastDueNotWorse == 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.9806 AND age <= 52 AND NumberRealEstateLoansOrLines <= 0 AND NumberOfOpenCreditLinesAndLoans <= 8
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 56 AND NumberRealEstateLoansOrLines <= 0 AND NumberOfOpenCreditLinesAndLoans <= 8 AND DebtRatio <= 1255 AND NumberOfTime30-59DaysPastDueNotWorse <= 0
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.4666 AND NumberOfOpenCreditLinesAndLoans > 6 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberOfOpenCreditLinesAndLoans > 15 AND age <= 56 AND DebtRatio > 0.6486 AND NumberOfTime30-59DaysPastDueNotWorse <= 0 AND age > 33
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND age <= 48 AND NumberOfOpenCreditLinesAndLoans > 10 AND DebtRatio > 0.4666 AND DebtRatio <= 1255 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND MonthlyIncome <= 7500 AND NumberOfDependents > 0 AND DebtRatio > 0.03174 AND age <= 60 AND DebtRatio <= 1255
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 65 AND DebtRatio <= 1255 AND age > 52 AND NumberRealEstateLoansOrLines <= 1 AND NumberOfTime30-59DaysPastDueNotWorse <= 0
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND age <= 48 AND NumberOfDependents <= 2 AND NumberOfOpenCreditLinesAndLoans <= 6 AND DebtRatio > 0.3669 AND NumberRealEstateLoansOrLines <= 2
+   IF NumberRealEstateLoansOrLines > 2 AND age <= 39 AND RevolvingUtilizationOfUnsecuredLines > 0.08275 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans > 4
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.154 AND NumberOfDependents <= 0 AND NumberRealEstateLoansOrLines <= 1 AND DebtRatio > 0.03174 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberRealEstateLoansOrLines <= 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND NumberOfOpenCreditLinesAndLoans <= 3 AND age <= 65
+   IF NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.6486 AND MonthlyIncome > 2008 AND RevolvingUtilizationOfUnsecuredLines > 0.2707 AND age > 44 AND DebtRatio <= 4
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND DebtRatio > 0.2879 AND NumberOfOpenCreditLinesAndLoans > 10 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND RevolvingUtilizationOfUnsecuredLines <= 0.154 AND DebtRatio <= 1255
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND NumberRealEstateLoansOrLines <= 0 AND NumberOfOpenCreditLinesAndLoans > 8 AND NumberOfDependents <= 1 AND DebtRatio <= 0.6486 AND MonthlyIncome <= 1.167e+04
+   IF RevolvingUtilizationOfUnsecuredLines > 0.2707 AND age <= 52 AND NumberOfOpenCreditLinesAndLoans > 8 AND NumberOfDependents <= 1 AND MonthlyIncome <= 6300 AND NumberRealEstateLoansOrLines <= 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.2707 AND NumberRealEstateLoansOrLines <= 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND age > 72 AND NumberOfOpenCreditLinesAndLoans <= 9 AND NumberOfOpenCreditLinesAndLoans > 3
+   IF age <= 33 AND NumberOfOpenCreditLinesAndLoans > 12 AND DebtRatio > 0.2879 AND RevolvingUtilizationOfUnsecuredLines > 0.01917 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707 AND NumberOfTime30-59DaysPastDueNotWorse <= 0
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND NumberOfOpenCreditLinesAndLoans <= 8 AND NumberRealEstateLoansOrLines > 1 AND DebtRatio > 0.2142 AND RevolvingUtilizationOfUnsecuredLines <= 0.08275 AND age <= 65
+   IF RevolvingUtilizationOfUnsecuredLines > 0.2707 AND age <= 33 AND NumberOfOpenCreditLinesAndLoans <= 5 AND NumberOfDependents > 0 AND RevolvingUtilizationOfUnsecuredLines <= 0.6967
+   IF RevolvingUtilizationOfUnsecuredLines > 0.2707 AND NumberRealEstateLoansOrLines > 1 AND MonthlyIncome <= 7500 AND age <= 60 AND age > 56 AND NumberOfOpenCreditLinesAndLoans <= 15
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND MonthlyIncome <= 3000 AND NumberOfOpenCreditLinesAndLoans <= 9 AND age <= 72 AND RevolvingUtilizationOfUnsecuredLines <= 0.154 AND DebtRatio <= 4
+   IF NumberOfTime60-89DaysPastDueNotWorse == 1
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND age <= 56 AND NumberOfOpenCreditLinesAndLoans > 8 AND DebtRatio > 0.03174
+   IF NumberOfTime30-59DaysPastDueNotWorse > 0 AND RevolvingUtilizationOfUnsecuredLines > 0.2707
+   IF RevolvingUtilizationOfUnsecuredLines > 0.6967 AND RevolvingUtilizationOfUnsecuredLines <= 0.9806 AND DebtRatio <= 1255 AND age <= 60 AND NumberRealEstateLoansOrLines <= 2
+   IF RevolvingUtilizationOfUnsecuredLines > 0.4434 AND DebtRatio > 0.6486 AND DebtRatio <= 4 AND age <= 56 AND NumberRealEstateLoansOrLines > 0 AND NumberOfOpenCreditLinesAndLoans > 3
+   IF NumberRealEstateLoansOrLines > 2 AND DebtRatio > 0.6486 AND MonthlyIncome > 2008 AND RevolvingUtilizationOfUnsecuredLines > 0.002906 AND NumberOfOpenCreditLinesAndLoans > 9
+   IF NumberOfOpenCreditLinesAndLoans > 15 AND age <= 48 AND DebtRatio > 0.3669 AND RevolvingUtilizationOfUnsecuredLines > 0.0433 AND DebtRatio <= 4 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707
+   IF RevolvingUtilizationOfUnsecuredLines > 0.154 AND age <= 39 AND NumberOfOpenCreditLinesAndLoans > 8 AND age > 33 AND MonthlyIncome <= 7500 AND RevolvingUtilizationOfUnsecuredLines <= 0.2707
+   IF RevolvingUtilizationOfUnsecuredLines > 0.154 AND NumberOfOpenCreditLinesAndLoans > 8 AND DebtRatio > 0.3669 AND NumberOfOpenCreditLinesAndLoans <= 15 AND NumberOfDependents <= 2 AND NumberRealEstateLoansOrLines <= 2
+
